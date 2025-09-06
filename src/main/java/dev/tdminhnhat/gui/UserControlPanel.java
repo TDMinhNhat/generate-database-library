@@ -2,14 +2,12 @@ package dev.tdminhnhat.gui;
 
 import dev.tdminhnhat.entity.DatabaseInformation;
 import dev.tdminhnhat.enums.TypeDatabase;
-import dev.tdminhnhat.service.ApplicationService;
+import dev.tdminhnhat.service.GenerateDatabaseService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 class UserControlPanel extends JPanel implements ActionListener {
 
@@ -131,7 +129,7 @@ class UserControlPanel extends JPanel implements ActionListener {
                                     ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
                                     null
                             );
-                            new ApplicationService().testConnection(databaseInformation);
+                            new GenerateDatabaseService().testConnection(databaseInformation);
                             toggleActionButton(true);
                         }).start();
                     }

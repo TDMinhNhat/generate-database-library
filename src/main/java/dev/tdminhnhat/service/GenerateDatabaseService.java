@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ApplicationService {
+public class GenerateDatabaseService {
 
     /**
      * Show the main GUI of the application.
