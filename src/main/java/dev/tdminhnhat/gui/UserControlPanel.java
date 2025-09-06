@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 class UserControlPanel extends JPanel implements ActionListener {
 
     private final JComboBox<TypeDatabase> cbChooseTypeDatabase = new JComboBox<>(TypeDatabase.values());
+    private final JComboBox<String> cbChooseTypeSource = new JComboBox<>(new String[] {"Default", "Users"});
+    private final JComboBox<String> cbChooseUser = new JComboBox<>(new String[]{});
+    private final JComboBox<String> cbChooseTopic = new JComboBox<>(new String[]{});
     private final JTextField txtInputHost = new JTextField("localhost");
     private final JTextField txtInputPort = new JTextField("1433");
     private final JTextField txtInputDatabaseName = new JTextField("");
@@ -70,26 +73,46 @@ class UserControlPanel extends JPanel implements ActionListener {
         lbInputPassword.setPreferredSize(new Dimension(100, 30));
         row3.add(lbInputPassword);
         row3.add(pwdInputPassword);
-        row2.add(Box.createRigidArea(new Dimension(10, 0)));
-        row2.add(row3);
 
-        // Row 4: Button Generate, Test Connect, Clear Input and Export Class
+        // Row 4: Choose the topics to generate database
         JPanel row4 = new JPanel();
         row4.setLayout(new BoxLayout(row4, BoxLayout.X_AXIS));
-        row4.add(btnGenerate);
-        row4.add(Box.createRigidArea(new Dimension(10, 0)));
-        row4.add(btnTestConnect);
-        row4.add(Box.createRigidArea(new Dimension(10, 0)));
-        row4.add(btnClearInput);
-        row4.add(Box.createRigidArea(new Dimension(10, 0)));
-        row4.add(btnExportClass);
+        JLabel lbChooseTypeSource = new JLabel("Type Source:");
+        lbChooseTypeSource.setFont(new Font("", Font.PLAIN, 15));
+        lbChooseTypeSource.setPreferredSize(new Dimension(150, 30));
+        row4.add(lbChooseTypeSource);
+        row4.add(cbChooseTypeSource);
+        JLabel lbChooseUser = new JLabel("User:");
+        lbChooseUser.setFont(new Font("", Font.PLAIN, 15));
+        lbChooseUser.setPreferredSize(new Dimension(100, 30));
+        row4.add(lbChooseUser);
+        row4.add(cbChooseUser);
+        JLabel lbChooseTopic = new JLabel("Topic:");
+        lbChooseTopic.setFont(new Font("", Font.PLAIN, 15));
+        lbChooseTopic.setPreferredSize(new Dimension(100, 30));
+        row4.add(lbChooseTopic);
+        row4.add(cbChooseTopic);
+
+        // Row 5: Button Generate, Test Connect, Clear Input and Export Class
+        JPanel row5 = new JPanel();
+        row5.setLayout(new BoxLayout(row5, BoxLayout.X_AXIS));
+        row5.add(btnGenerate);
+        row5.add(Box.createRigidArea(new Dimension(10, 0)));
+        row5.add(btnTestConnect);
+        row5.add(Box.createRigidArea(new Dimension(10, 0)));
+        row5.add(btnClearInput);
+        row5.add(Box.createRigidArea(new Dimension(10, 0)));
+        row5.add(btnExportClass);
 
         box.add(row1);
         box.add(row2);
         box.add(row3);
         box.add(row4);
-        this.add(box, BorderLayout.CENTER);
+        box.add(row5);
+
         addEvent();
+        defaultSetting();
+        this.add(box, BorderLayout.CENTER);
     }
 
     private void addEvent() {
@@ -98,6 +121,10 @@ class UserControlPanel extends JPanel implements ActionListener {
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
         btnExportClass.addActionListener(this);
+    }
+
+    private void defaultSetting() {
+        this.cbChooseTopic.setEnabled(false);
     }
 
     @Override
