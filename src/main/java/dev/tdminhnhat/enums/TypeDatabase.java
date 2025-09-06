@@ -20,4 +20,20 @@ public enum TypeDatabase {
         this.host = host;
         this.port = port;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
 }

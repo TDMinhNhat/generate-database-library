@@ -1,11 +1,15 @@
 package dev.tdminhnhat.gui;
 
+import dev.tdminhnhat.entity.DatabaseInformation;
 import dev.tdminhnhat.enums.TypeDatabase;
+import dev.tdminhnhat.service.ApplicationService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 class UserControlPanel extends JPanel implements ActionListener {
 
@@ -101,22 +105,81 @@ class UserControlPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() instanceof JComboBox<?>) {
-
+            JComboBox<TypeDatabase> target = ((JComboBox<TypeDatabase>) e.getSource());
+            txtInputPort.setText(((TypeDatabase) target.getSelectedItem()).getPort().toString());
         } else {
-            switch(((JButton) e.getSource()).getName()) {
+            switch(e.getActionCommand()) {
                 case "Generate Database" -> {
+                    if(checkInputEmpty()) {
+                        toggleActionButton(false);
+                        new Thread(() -> {
 
+                            toggleActionButton(true);
+                        }).start();
+                    }
                 }
                 case "Test Connect" -> {
-
+                    if(checkInputEmpty()) {
+                        toggleActionButton(false);
+                        new Thread(() -> {
+                            DatabaseInformation databaseInformation = new DatabaseInformation(
+                                    txtInputHost.getText(),
+                                    Integer.parseInt(txtInputPort.getText()),
+                                    txtInputUsername.getText(),
+                                    String.valueOf(pwdInputPassword.getPassword()),
+                                    txtInputDatabaseName.getText(),
+                                    ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
+                                    null
+                            );
+                            new ApplicationService().testConnection(databaseInformation);
+                            toggleActionButton(true);
+                        }).start();
+                    }
                 }
                 case "Clear Input" -> {
-
+                    txtInputHost.setText("localhost");
+                    txtInputPort.setText("1433");
+                    txtInputDatabaseName.setText("");
+                    txtInputUsername.setText("sa");
+                    pwdInputPassword.setText("123456789");
+                    cbChooseTypeDatabase.setSelectedIndex(0);
+                    txtInputHost.setFocusable(true);
                 }
                 case "Export Class" -> {
 
                 }
             }
         }
+    }
+
+    private void toggleActionButton(boolean value) {
+        btnTestConnect.setEnabled(value);
+        btnClearInput.setEnabled(value);
+        btnGenerate.setEnabled(value);
+        btnExportClass.setEnabled(value);
+    }
+
+    private void showMessageError(String message) {
+        JOptionPane.showMessageDialog(null, message, "Error",  JOptionPane.ERROR_MESSAGE);
+    }
+
+    private boolean checkInputEmpty() {
+        if(txtInputHost.getText().isEmpty()) {
+            showMessageError("Please enter a valid Host");
+            return false;
+        } else if(txtInputPort.getText().isEmpty()) {
+            showMessageError("Please enter a valid Port");
+            return false;
+        } else if(txtInputUsername.getText().isEmpty()) {
+            showMessageError("Please enter a valid Username");
+            return false;
+        } else if(pwdInputPassword.getPassword().length == 0) {
+            showMessageError("Please enter a valid Password");
+            return false;
+        } else if(txtInputDatabaseName.getText().isEmpty()) {
+            showMessageError("Please enter a valid Database Name");
+            return false;
+        }
+        return true;
     }
 }
