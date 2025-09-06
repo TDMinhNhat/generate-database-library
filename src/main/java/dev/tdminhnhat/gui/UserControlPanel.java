@@ -129,7 +129,12 @@ class UserControlPanel extends JPanel implements ActionListener {
                                     ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
                                     null
                             );
-                            new GenerateDatabaseService().testConnection(databaseInformation);
+                            boolean result = new GenerateDatabaseService().testConnection(databaseInformation);
+                            if(result) {
+                                JOptionPane.showMessageDialog(null, "Connect to database successfully!", "Connection Success", JOptionPane.INFORMATION_MESSAGE);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Connect to database failed!", "Connection Failed", JOptionPane.ERROR_MESSAGE);
+                            }
                             toggleActionButton(true);
                         }).start();
                     }
