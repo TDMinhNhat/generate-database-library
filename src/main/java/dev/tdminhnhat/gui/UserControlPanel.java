@@ -3,18 +3,20 @@ package dev.tdminhnhat.gui;
 import dev.tdminhnhat.entity.DatabaseInformation;
 import dev.tdminhnhat.enums.TypeDatabase;
 import dev.tdminhnhat.service.GenerateDatabaseService;
+import dev.tdminhnhat.service.TopicService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 class UserControlPanel extends JPanel implements ActionListener {
 
     private final JComboBox<TypeDatabase> cbChooseTypeDatabase = new JComboBox<>(TypeDatabase.values());
-    private final JComboBox<String> cbChooseTypeSource = new JComboBox<>(new String[] {"Default", "Users"});
+    private final JComboBox<String> cbChooseTypeSource = new JComboBox<>(new String[]{"Default", "Users"});
     private final JComboBox<String> cbChooseUser = new JComboBox<>(new String[]{});
-    private final JComboBox<String> cbChooseTopic = new JComboBox<>(new String[]{});
+    private final JComboBox<String> cbChooseTopic = new JComboBox<>(TopicService.getListDefaultTopics());
     private final JTextField txtInputHost = new JTextField("localhost");
     private final JTextField txtInputPort = new JTextField("1433");
     private final JTextField txtInputDatabaseName = new JTextField("");
@@ -116,7 +118,22 @@ class UserControlPanel extends JPanel implements ActionListener {
     }
 
     private void addEvent() {
-        cbChooseTypeDatabase.addActionListener(this);
+        cbChooseTypeDatabase.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JComboBox<TypeDatabase> target = ((JComboBox<TypeDatabase>) e.getSource());
+                txtInputPort.setText(((TypeDatabase) target.getSelectedItem()).getPort().toString());
+            }
+        });
+        cbChooseTypeSource.addActionListener((e) -> {
+            JComboBox<String> target = ((JComboBox<String>) e.getSource());
+            if (Objects.equals(target.getSelectedItem(), "Default")) {
+                cbChooseUser.setEnabled(false);
+
+            } else {
+                cbChooseUser.setEnabled(true);
+            }
+        });
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
@@ -124,62 +141,58 @@ class UserControlPanel extends JPanel implements ActionListener {
     }
 
     private void defaultSetting() {
-        this.cbChooseTopic.setEnabled(false);
+        this.cbChooseUser.setEnabled(false);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() instanceof JComboBox<?>) {
-            JComboBox<TypeDatabase> target = ((JComboBox<TypeDatabase>) e.getSource());
-            txtInputPort.setText(((TypeDatabase) target.getSelectedItem()).getPort().toString());
-        } else {
-            switch(e.getActionCommand()) {
-                case "Generate Database" -> {
-                    if(checkInputEmpty()) {
-                        toggleActionButton(false);
-                        new Thread(() -> {
+        switch (e.getActionCommand()) {
+            case "Generate Database" -> {
+                if (checkInputEmpty()) {
+                    toggleActionButton(false);
+                    new Thread(() -> {
 
-                            toggleActionButton(true);
-                        }).start();
-                    }
-                }
-                case "Test Connect" -> {
-                    if(checkInputEmpty()) {
-                        toggleActionButton(false);
-                        new Thread(() -> {
-                            DatabaseInformation databaseInformation = new DatabaseInformation(
-                                    txtInputHost.getText(),
-                                    Integer.parseInt(txtInputPort.getText()),
-                                    txtInputUsername.getText(),
-                                    String.valueOf(pwdInputPassword.getPassword()),
-                                    txtInputDatabaseName.getText(),
-                                    ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
-                                    null
-                            );
-                            boolean result = new GenerateDatabaseService().testConnection(databaseInformation);
-                            if(result) {
-                                JOptionPane.showMessageDialog(null, "Connect to database successfully!", "Connection Success", JOptionPane.INFORMATION_MESSAGE);
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Connect to database failed!", "Connection Failed", JOptionPane.ERROR_MESSAGE);
-                            }
-                            toggleActionButton(true);
-                        }).start();
-                    }
-                }
-                case "Clear Input" -> {
-                    txtInputHost.setText("localhost");
-                    txtInputPort.setText("1433");
-                    txtInputDatabaseName.setText("");
-                    txtInputUsername.setText("sa");
-                    pwdInputPassword.setText("123456789");
-                    cbChooseTypeDatabase.setSelectedIndex(0);
-                    txtInputHost.setFocusable(true);
-                }
-                case "Export Class" -> {
-
+                        toggleActionButton(true);
+                    }).start();
                 }
             }
+            case "Test Connect" -> {
+                if (checkInputEmpty()) {
+                    toggleActionButton(false);
+                    new Thread(() -> {
+                        DatabaseInformation databaseInformation = new DatabaseInformation(
+                                txtInputHost.getText(),
+                                Integer.parseInt(txtInputPort.getText()),
+                                txtInputUsername.getText(),
+                                String.valueOf(pwdInputPassword.getPassword()),
+                                txtInputDatabaseName.getText(),
+                                ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
+                                null
+                        );
+                        boolean result = new GenerateDatabaseService().testConnection(databaseInformation);
+                        if (result) {
+                            JOptionPane.showMessageDialog(null, "Connect to database successfully!", "Connection Success", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Connect to database failed!", "Connection Failed", JOptionPane.ERROR_MESSAGE);
+                        }
+                        toggleActionButton(true);
+                    }).start();
+                }
+            }
+            case "Clear Input" -> {
+                txtInputHost.setText("localhost");
+                txtInputPort.setText("1433");
+                txtInputDatabaseName.setText("");
+                txtInputUsername.setText("sa");
+                pwdInputPassword.setText("123456789");
+                cbChooseTypeDatabase.setSelectedIndex(0);
+                txtInputHost.setFocusable(true);
+            }
+            case "Export Class" -> {
+
+            }
         }
+
     }
 
     private void toggleActionButton(boolean value) {
@@ -190,23 +203,23 @@ class UserControlPanel extends JPanel implements ActionListener {
     }
 
     private void showMessageError(String message) {
-        JOptionPane.showMessageDialog(null, message, "Error",  JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
     private boolean checkInputEmpty() {
-        if(txtInputHost.getText().isEmpty()) {
+        if (txtInputHost.getText().isEmpty()) {
             showMessageError("Please enter a valid Host");
             return false;
-        } else if(txtInputPort.getText().isEmpty()) {
+        } else if (txtInputPort.getText().isEmpty()) {
             showMessageError("Please enter a valid Port");
             return false;
-        } else if(txtInputUsername.getText().isEmpty()) {
+        } else if (txtInputUsername.getText().isEmpty()) {
             showMessageError("Please enter a valid Username");
             return false;
-        } else if(pwdInputPassword.getPassword().length == 0) {
+        } else if (pwdInputPassword.getPassword().length == 0) {
             showMessageError("Please enter a valid Password");
             return false;
-        } else if(txtInputDatabaseName.getText().isEmpty()) {
+        } else if (txtInputDatabaseName.getText().isEmpty()) {
             showMessageError("Please enter a valid Database Name");
             return false;
         }

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add notice after testConnection">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add choose type, topic and user">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
     </list>
@@ -17,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -115,7 +116,8 @@
       <updated>1757119701990</updated>
       <workItem from="1757119703329" duration="4303000" />
       <workItem from="1757125788633" duration="2904000" />
-      <workItem from="1757158763310" duration="5500000" />
+      <workItem from="1757158763310" duration="6323000" />
+      <workItem from="1757214462678" duration="3385000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -141,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757160548864</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add choose type, topic and user">
+      <option name="closed" value="true" />
+      <created>1757172352777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757172352777</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +161,7 @@
     <MESSAGE value="Init project" />
     <MESSAGE value="Add basic entity" />
     <MESSAGE value="Add notice after testConnection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add notice after testConnection" />
+    <MESSAGE value="Add choose type, topic and user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add choose type, topic and user" />
   </component>
 </project>
