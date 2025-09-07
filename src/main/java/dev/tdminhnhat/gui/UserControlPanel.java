@@ -15,7 +15,7 @@ class UserControlPanel extends JPanel implements ActionListener {
 
     private final JComboBox<TypeDatabase> cbChooseTypeDatabase = new JComboBox<>(TypeDatabase.values());
     private final JComboBox<String> cbChooseTypeSource = new JComboBox<>(new String[]{"Default", "Users"});
-    private final JComboBox<String> cbChooseUser = new JComboBox<>(new String[]{});
+    private final JComboBox<String> cbChooseUser = new JComboBox<>(TopicService.getListUsers());
     private final JComboBox<String> cbChooseTopic = new JComboBox<>(TopicService.getListDefaultTopics());
     private final JTextField txtInputHost = new JTextField("localhost");
     private final JTextField txtInputPort = new JTextField("1433");
@@ -129,10 +129,18 @@ class UserControlPanel extends JPanel implements ActionListener {
             JComboBox<String> target = ((JComboBox<String>) e.getSource());
             if (Objects.equals(target.getSelectedItem(), "Default")) {
                 cbChooseUser.setEnabled(false);
-
+                DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(
+                        TopicService.getListDefaultTopics()
+                );
+                cbChooseTopic.setModel(comboBoxModel);
             } else {
                 cbChooseUser.setEnabled(true);
+                DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(
+                        TopicService.getListTopicsByUser(cbChooseUser.getSelectedItem().toString())
+                );
+                cbChooseTopic.setModel(comboBoxModel);
             }
+            this.repaint();
         });
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);

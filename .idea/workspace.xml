@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add choose type, topic and user">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +42,12 @@
     &quot;assignee&quot;: &quot;TDMinhNhat&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TDMinhNhat/generate-database-library.git&quot;,
-    &quot;accountId&quot;: &quot;e889e1e9-afbc-41ef-8f1b-cb7391894b93&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TDMinhNhat/generate-database-library.git",
+    "accountId": "4bb43c52-9f0a-4a24-8b67-f47d2d04a22a"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" root0="FORCE_HIGHLIGHTING" />
   </component>
