@@ -1,10 +1,16 @@
 package dev.tdminhnhat.service;
 
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.MappedSuperclass;
+import lombok.NonNull;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 
 import java.lang.reflect.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class TopicService {
 
@@ -52,5 +58,22 @@ public class TopicService {
                 .distinct()
                 .toList()
                 .toArray(new String[]{});
+    }
+
+    public static void getListClassTopic(String username, @NonNull String topic) {
+        AnnotatedElement[] listAnnotatedElements = new AnnotatedElement[]{
+                Entity.class, Embeddable.class, MappedSuperclass.class
+        };
+        if(Objects.isNull(username)) {
+            List<Class<?>> listClasses = new Reflections("dev.tdminhnhat.entity.topics." + topic)
+                    .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
+                    .stream()
+                    .toList();
+        } else {
+            List<Class<?>> listClasses = new Reflections("dev.tdminhnhat.entity.users" + username + "." + topic)
+                    .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
+                    .stream()
+                    .toList();
+        }
     }
 }

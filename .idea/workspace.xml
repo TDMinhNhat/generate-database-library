@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add choose type, topic and user">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Get topics and users">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/EntityInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,17 +150,37 @@
       <option name="project" value="LOCAL" />
       <updated>1757172352777</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Get topics and users">
+      <option name="closed" value="true" />
+      <created>1757233661087</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757233661087</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init project" />
     <MESSAGE value="Add basic entity" />
     <MESSAGE value="Add notice after testConnection" />
     <MESSAGE value="Add choose type, topic and user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add choose type, topic and user" />
+    <MESSAGE value="Get topics and users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get topics and users" />
   </component>
 </project>
