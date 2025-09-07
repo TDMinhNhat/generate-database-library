@@ -1,14 +1,13 @@
 package dev.tdminhnhat.service;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.MappedSuperclass;
+import dev.tdminhnhat.entity.EntityInformation;
+import jakarta.persistence.*;
 import lombok.NonNull;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 
 import java.lang.reflect.*;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -60,20 +59,45 @@ public class TopicService {
                 .toArray(new String[]{});
     }
 
-    public static void getListClassTopic(String username, @NonNull String topic) {
+    /**
+     * Get all the classes inside the topic.
+     * @param username The name of the user who has provided their topics. If null, it will get the default topics.
+     * @param topic The name of the topic to get the classes from.
+     * @return {@link List} - Return a list of {@link Class} inside the topic.
+     */
+    public static List<EntityInformation> getListClassTopic(String username, @NonNull String topic) {
         AnnotatedElement[] listAnnotatedElements = new AnnotatedElement[]{
                 Entity.class, Embeddable.class, MappedSuperclass.class
         };
         if(Objects.isNull(username)) {
-            List<Class<?>> listClasses = new Reflections("dev.tdminhnhat.entity.topics." + topic)
+            return new Reflections("dev.tdminhnhat.entity.topics." + topic)
                     .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
-                    .stream()
-                    .toList();
+                    .parallelStream()
+                    .map(TopicService::mapClassToEntityInformation).toList();
         } else {
-            List<Class<?>> listClasses = new Reflections("dev.tdminhnhat.entity.users" + username + "." + topic)
+            return new Reflections("dev.tdminhnhat.entity.users." + username + "." + topic)
                     .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
-                    .stream()
-                    .toList();
+                    .parallelStream()
+                    .map(TopicService::mapClassToEntityInformation).toList();
         }
+    }
+
+    private static boolean checkForeignAnnotation(Field field) {
+        return field.getAnnotatedType().isAnnotationPresent(ManyToOne.class) ||
+                field.getAnnotatedType().isAnnotationPresent(OneToOne.class);
+    }
+
+    private static EntityInformation mapClassToEntityInformation(Class<?> clazzItem) {
+        return new EntityInformation(
+                clazzItem.getName().split("\\.")[clazzItem.getName().split("\\.").length - 1],
+                clazzItem.getSuperclass().getName().split("\\.")[clazzItem.getSuperclass().getName().split("\\.").length - 1],
+                clazzItem.getPackageName(),
+                Arrays.stream(clazzItem.getDeclaredFields()).count(),
+                clazzItem.isAnnotationPresent(Entity.class),
+                Arrays.stream(clazzItem.getFields()).filter(TopicService::checkForeignAnnotation)
+                        .map(Field::getType)
+                        .distinct()
+                        .toList()
+        );
     }
 }

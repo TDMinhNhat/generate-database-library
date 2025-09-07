@@ -150,6 +150,7 @@ class UserControlPanel extends JPanel implements ActionListener {
 
     private void defaultSetting() {
         this.cbChooseUser.setEnabled(false);
+        ListEntitiesPanel.addDataToTable(null, cbChooseTopic.getSelectedItem().toString());
     }
 
     @Override

@@ -9,9 +9,9 @@ import java.util.List;
 @AllArgsConstructor
 public class EntityInformation {
     private String className;
-    private String numberOfFields;
-    private String numberOfColumns;
-    private Boolean isEntity;
+    private String subClassName;
     private String packageName;
-    private List<EntityInformation> foreignEntities;
+    private Long numberOfFields;
+    private Boolean isEntity;
+    private List<? extends Class<?>> foreignClasses;
 }
