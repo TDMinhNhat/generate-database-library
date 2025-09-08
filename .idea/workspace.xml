@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update maven">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update maven v2">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/AbstractEntityProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/AbstractEntityProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/DatabaseInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/DatabaseInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/EntityInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/EntityInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/basic/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/topics/basic/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/basic/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/topics/basic/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/basic/enums/PersonStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/topics/basic/enums/PersonStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/product_basic/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/topics/product_basic/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/product_basic/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/topics/product_basic/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/example/department/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/department/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/example/department/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/example/product/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/users/example/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/example/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/enums/TypeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/enums/TypeDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/HomeApplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/HomeApplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/ListEntitiesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ListEntitiesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/GenerateDatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/GenerateDatabaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/util/HibernateUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +143,7 @@
       <workItem from="1757125788633" duration="2904000" />
       <workItem from="1757158763310" duration="6323000" />
       <workItem from="1757214462678" duration="3385000" />
-      <workItem from="1757306264216" duration="2806000" />
+      <workItem from="1757306264216" duration="3156000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -231,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757304708187</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update maven v2">
+      <option name="closed" value="true" />
+      <created>1757309380116</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757309380116</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +288,7 @@
     <MESSAGE value="Fix don't count FK" />
     <MESSAGE value="Refactor code" />
     <MESSAGE value="Update maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update maven" />
+    <MESSAGE value="Update maven v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update maven v2" />
   </component>
 </project>
