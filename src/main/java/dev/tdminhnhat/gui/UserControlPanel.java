@@ -10,9 +10,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class UserControlPanel extends JPanel implements ActionListener {
 
+    private static Logger log = Logger.getLogger(UserControlPanel.class.getName());
     private final JComboBox<TypeDatabase> cbChooseTypeDatabase = new JComboBox<>(TypeDatabase.values());
     private final JComboBox<String> cbChooseTypeSource = new JComboBox<>(new String[]{"Default", "Users"});
     private final JComboBox<String> cbChooseUser = new JComboBox<>(TopicService.getListUsers());
@@ -161,20 +164,27 @@ class UserControlPanel extends JPanel implements ActionListener {
                 if (checkInputEmpty()) {
                     toggleActionButton(false);
                     new Thread(() -> {
-                        DatabaseInformation databaseInformation = new DatabaseInformation(
-                                txtInputHost.getText(),
-                                Integer.parseInt(txtInputPort.getText()),
-                                txtInputUsername.getText(),
-                                String.valueOf(pwdInputPassword.getPassword()),
-                                txtInputDatabaseName.getText(),
-                                ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
-                                null
-                        );
-                        GenerateDatabaseService.generateDatabase(databaseInformation, TopicService.getListClassNatureTopic(
-                                cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null,
-                                cbChooseTopic.getSelectedItem().toString()
-                        ));
-                        toggleActionButton(true);
+                        try {
+                            DatabaseInformation databaseInformation = new DatabaseInformation(
+                                    txtInputHost.getText(),
+                                    Integer.parseInt(txtInputPort.getText()),
+                                    txtInputUsername.getText(),
+                                    String.valueOf(pwdInputPassword.getPassword()),
+                                    txtInputDatabaseName.getText(),
+                                    ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
+                                    null
+                            );
+                            GenerateDatabaseService.generateDatabase(databaseInformation, TopicService.getListClassNatureTopic(
+                                    cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null,
+                                    cbChooseTopic.getSelectedItem().toString()
+                            ));
+                            JOptionPane.showMessageDialog(null, "Generate database successfully!", "Generate Database Info", JOptionPane.INFORMATION_MESSAGE);
+                        } catch (Exception ex) {
+                            log.log(Level.WARNING, ex.getMessage());
+                            JOptionPane.showMessageDialog(null, "There are something wrong when executing generate database. Read the log and try again", "Generate Database Error", JOptionPane.ERROR_MESSAGE);
+                        } finally {
+                            toggleActionButton(true);
+                        }
                     }).start();
                 }
             }
