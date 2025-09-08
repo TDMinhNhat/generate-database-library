@@ -4,9 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.tdminhnhat</groupId>
-    <artifactId>generate-database-library</artifactId>
+    <groupId>io.github.tdminhnhat</groupId>
+    <artifactId>generate-database</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>generate-database</name>
+    <description>A library for generating database</description>
+    <url>https://github.com/TDMinhNhat/generate-database-library</url>
+
+    <licenses>
+        <license>
+            <name></name>
+            <url></url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Nhat Truong</name>
+            <email>tdminhnhat13092003@gmail.com</email>
+            <organization>Sonatype</organization>
+            <organizationUrl>http://www.sonatype.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/TDMinhNhat/generate-database-library.git</connection>
+        <developerConnection>scm:git:ssh://github.com/TDMinhNhat/generate-database-library.git</developerConnection>
+        <url>https://github.com/TDMinhNhat/generate-database-library</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -57,4 +84,48 @@
             <version>23.9.0.25.07</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Attach sources -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Attach javadocs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Sign artifacts -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals><goal>sign</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
