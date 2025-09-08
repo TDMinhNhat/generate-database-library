@@ -36,6 +36,12 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("ID").setCellRenderer(globalRenderColumn);
         table.getColumn("ID").setResizable(false);
 
+        table.getColumn("Entity Name").setMaxWidth(125);
+        table.getColumn("Entity Name").setMinWidth(125);
+
+        table.getColumn("Supper Entity").setMaxWidth(125);
+        table.getColumn("Supper Entity").setMinWidth(125);
+
         table.getColumn("Count Field").setCellRenderer(globalRenderColumn);
         table.getColumn("Count Field").setMaxWidth(100);
         table.getColumn("Count Field").setResizable(false);
@@ -45,7 +51,8 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("Is Entity").setResizable(false);
 
         table.getColumn("Count Foreign Key").setCellRenderer(globalRenderColumn);
-        table.getColumn("Count Foreign Key").setPreferredWidth(75);
+        table.getColumn("Count Foreign Key").setMinWidth(125);
+        table.getColumn("Count Foreign Key").setMaxWidth(125);
         table.getColumn("Count Foreign Key").setResizable(false);
 
         table.getColumn("Actions").setCellRenderer(viewRenderColumn);
