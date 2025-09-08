@@ -65,15 +65,15 @@ class ListEntitiesPanel extends JPanel {
     public static void addDataToTable(String username, String topic) {
         removeAllRows();
 
-        List<EntityInformation> datas = TopicService.getListClassTopic(username, topic);
-        datas.stream().map(entityInformation -> new String[]{
+        List<EntityInformation> data = TopicService.getListClassTopic(username, topic);
+        data.stream().map(entityInformation -> new String[]{
                 String.valueOf(tableModel.getRowCount() + 1),
                 entityInformation.getClassName(),
                 entityInformation.getSubClassName(),
                 entityInformation.getPackageName(),
                 String.valueOf(entityInformation.getNumberOfFields()),
                 entityInformation.getIsEntity().toString(),
-                String.valueOf(entityInformation.getForeignClasses().size()),
+                String.valueOf(entityInformation.getCountFK()),
                 "View"
         }).forEach(tableModel::addRow);
 

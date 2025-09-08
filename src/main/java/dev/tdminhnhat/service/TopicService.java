@@ -6,8 +6,10 @@ import lombok.NonNull;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -83,11 +85,6 @@ public class TopicService {
         return new Reflections(packageScanning).get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass()).stream().toList();
     }
 
-    private static boolean checkForeignAnnotation(Field field) {
-        return field.getAnnotatedType().isAnnotationPresent(ManyToOne.class) ||
-                field.getAnnotatedType().isAnnotationPresent(OneToOne.class);
-    }
-
     private static EntityInformation mapClassToEntityInformation(Class<?> clazzItem) {
         return new EntityInformation(
                 clazzItem.getName().split("\\.")[clazzItem.getName().split("\\.").length - 1],
@@ -95,10 +92,12 @@ public class TopicService {
                 clazzItem.getPackageName(),
                 Arrays.stream(clazzItem.getDeclaredFields()).count(),
                 clazzItem.isAnnotationPresent(Entity.class),
-                Arrays.stream(clazzItem.getFields()).filter(TopicService::checkForeignAnnotation)
-                        .map(Field::getType)
-                        .distinct()
-                        .toList()
+                Arrays.stream(clazzItem.getDeclaredFields())
+                        .filter(field -> {
+                            System.out.println("Checking");
+                            return field.isAnnotationPresent(ManyToOne.class) || field.isAnnotationPresent(OneToOne.class);
+                        })
+                        .count()
         );
     }
 }

@@ -13,5 +13,5 @@ public class EntityInformation {
     private String packageName;
     private Long numberOfFields;
     private Boolean isEntity;
-    private List<? extends Class<?>> foreignClasses;
+    private Long countFK;
 }

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add notice">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/product_basic/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/topics/product_basic/Product.java" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add product-basic topic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/EntityInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/entity/EntityInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/ListEntitiesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/gui/ListEntitiesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +80,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dev.tdminhnhat.entity.topics.product_basic" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.tdminhnhat.Main" />
@@ -190,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757300527482</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add product-basic topic">
+      <option name="closed" value="true" />
+      <created>1757301044395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1757301044395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +232,22 @@
     <MESSAGE value="Done generate database" />
     <MESSAGE value="Fix package for users" />
     <MESSAGE value="Add notice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add notice" />
+    <MESSAGE value="Add product-basic topic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add product-basic topic" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/tdminhnhat/service/TopicService.java</url>
+          <line>87</line>
+          <properties class="dev.tdminhnhat.service.TopicService" method="mapClassToEntityInformation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
