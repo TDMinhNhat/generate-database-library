@@ -13,8 +13,6 @@ import java.util.Properties;
 
 public class HibernateUtil {
 
-    private static SessionFactory sessionFactory;
-
     public static SessionFactory getSessionFactory(DatabaseInformation databaseInformation, List<Class<?>> classes) {
         Configuration configuration = new Configuration();
 
