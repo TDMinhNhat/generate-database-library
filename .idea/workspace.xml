@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Refactor code">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update maven">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -56,28 +56,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Nhat/projects/generate-database-library/src/main/java/dev/tdminhnhat/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Maven.generate-database [deploy].executor": "Run",
+    "Maven.generate-database [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Nhat/projects/generate-database-library/src/main/java/dev/tdminhnhat/Main.java",
+    "settings.editor.selected.configurable": "ssh.settings",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dev.tdminhnhat.entity.topics.product_basic" />
@@ -122,6 +125,7 @@
       <workItem from="1757125788633" duration="2904000" />
       <workItem from="1757158763310" duration="6323000" />
       <workItem from="1757214462678" duration="3385000" />
+      <workItem from="1757306264216" duration="2806000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -219,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757302567659</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Update maven">
+      <option name="closed" value="true" />
+      <created>1757304708186</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757304708187</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +261,7 @@
     <MESSAGE value="Add product-basic topic" />
     <MESSAGE value="Fix don't count FK" />
     <MESSAGE value="Refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
+    <MESSAGE value="Update maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update maven" />
   </component>
 </project>
