@@ -91,10 +91,7 @@ public class TopicService {
                 Arrays.stream(clazzItem.getDeclaredFields()).count(),
                 clazzItem.isAnnotationPresent(Entity.class),
                 Arrays.stream(clazzItem.getDeclaredFields())
-                        .filter(field -> {
-                            System.out.println("Checking");
-                            return field.isAnnotationPresent(ManyToOne.class) || field.isAnnotationPresent(OneToOne.class);
-                        })
+                        .filter(field -> field.isAnnotationPresent(ManyToOne.class) || field.isAnnotationPresent(OneToOne.class))
                         .count()
         );
     }

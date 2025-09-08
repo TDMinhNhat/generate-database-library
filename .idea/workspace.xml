@@ -106,11 +106,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dev.tdminhnhat.Main" />
+      <option name="MAIN_CLASS_NAME" value="io.github.tdminhnhat.Main" />
       <module name="generate-database-library" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dev.tdminhnhat.*" />
+          <option name="PATTERN" value="io.github.tdminhnhat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
