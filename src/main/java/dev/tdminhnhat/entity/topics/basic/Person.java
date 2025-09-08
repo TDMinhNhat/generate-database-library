@@ -48,7 +48,7 @@ public class Person extends AbstractEntityProperty {
     private String password;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "status", nullable = false, columnDefinition = "DEFAULT 1")
+    @Column(name = "status", nullable = false)
     private PersonStatus status;
 
     public Person(String createdBy, String updatedBy, @NonNull String firstName, @NonNull String lastName, @NonNull Boolean sex, @NonNull LocalDate birthDate, String address, @NonNull String username, @NonNull String email, @NonNull String password) {

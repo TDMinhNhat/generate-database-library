@@ -63,23 +63,24 @@ public class TopicService {
      * Get all the classes inside the topic.
      * @param username The name of the user who has provided their topics. If null, it will get the default topics.
      * @param topic The name of the topic to get the classes from.
-     * @return {@link List} - Return a list of {@link Class} inside the topic.
+     * @return {@link List} - Return a list of {@link EntityInformation} inside the topic.
      */
     public static List<EntityInformation> getListClassTopic(String username, @NonNull String topic) {
+        return getListClassNatureTopic(username, topic).parallelStream().map(TopicService::mapClassToEntityInformation).toList();
+    }
+
+    /**
+     * Get all the classes nature inside the topic
+     * @param username The name of the user who has provided their topics. If null, it will get the default topics.
+     * @param topic The name of the topic to get the classes from.
+     * @return {@link List} - Return a list of {@link Class} inside the topic.
+     */
+    public static List<Class<?>> getListClassNatureTopic(String username, String topic) {
         AnnotatedElement[] listAnnotatedElements = new AnnotatedElement[]{
                 Entity.class, Embeddable.class, MappedSuperclass.class
         };
-        if(Objects.isNull(username)) {
-            return new Reflections("dev.tdminhnhat.entity.topics." + topic)
-                    .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
-                    .parallelStream()
-                    .map(TopicService::mapClassToEntityInformation).toList();
-        } else {
-            return new Reflections("dev.tdminhnhat.entity.users." + username + "." + topic)
-                    .get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass())
-                    .parallelStream()
-                    .map(TopicService::mapClassToEntityInformation).toList();
-        }
+        String packageScanning = Objects.isNull(username) ? "dev.tdminhnhat.entity.topics." + topic : "dev.tdminhnhat.users." + username + "." + topic;
+        return new Reflections(packageScanning).get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass()).stream().toList();
     }
 
     private static boolean checkForeignAnnotation(Field field) {

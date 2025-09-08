@@ -12,7 +12,12 @@ import java.util.List;
 class ListEntitiesPanel extends JPanel {
 
     private static final String[] columnNames = {"ID", "Entity Name", "Supper Entity", "Package Name", "Count Field", "Is Entity", "Count Foreign Key", "Actions"};
-    private static final DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
+    private static final DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0) {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
     private static final JTable table = new JTable(tableModel);
     public ListEntitiesPanel() {
         this.setLayout(new BorderLayout());
@@ -26,9 +31,6 @@ class ListEntitiesPanel extends JPanel {
     private void defaultSetting() {
         DefaultTableCellRenderer globalRenderColumn = new DefaultTableCellRenderer();
         globalRenderColumn.setHorizontalAlignment(JLabel.CENTER);
-
-        DefaultTableCellRenderer viewRenderColumn = new DefaultTableCellRenderer();
-
 
         table.setRowHeight(30);
 
@@ -55,12 +57,14 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("Count Foreign Key").setMaxWidth(125);
         table.getColumn("Count Foreign Key").setResizable(false);
 
-        table.getColumn("Actions").setCellRenderer(viewRenderColumn);
+//        table.getColumn("Actions").setCellRenderer(viewRenderColumn);
         table.getColumn("Actions").setMaxWidth(75);
         table.getColumn("Actions").setResizable(false);
     }
 
     public static void addDataToTable(String username, String topic) {
+        removeAllRows();
+
         List<EntityInformation> datas = TopicService.getListClassTopic(username, topic);
         datas.stream().map(entityInformation -> new String[]{
                 String.valueOf(tableModel.getRowCount() + 1),
@@ -72,5 +76,14 @@ class ListEntitiesPanel extends JPanel {
                 String.valueOf(entityInformation.getForeignClasses().size()),
                 "View"
         }).forEach(tableModel::addRow);
+
+        table.repaint();
+    }
+
+    private static void removeAllRows() {
+        if(table.getRowCount() > 0) {
+            tableModel.removeRow(0);
+            removeAllRows();
+        }
     }
 }

@@ -3,17 +3,20 @@ package dev.tdminhnhat.service;
 import dev.tdminhnhat.entity.DatabaseInformation;
 import dev.tdminhnhat.enums.TypeDatabase;
 import dev.tdminhnhat.gui.HomeApplicationGUI;
+import dev.tdminhnhat.util.HibernateUtil;
+import jakarta.persistence.EntityManager;
 
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.List;
 
 public class GenerateDatabaseService {
 
     /**
      * Show the main GUI of the application.
      */
-    public void showGUI() {
+    public static void showGUI() {
         SwingUtilities.invokeLater(HomeApplicationGUI::new);
     }
 
@@ -23,7 +26,7 @@ public class GenerateDatabaseService {
      * @param databaseInformation {@link DatabaseInformation}
      * @return boolean
      */
-    public boolean testConnection(DatabaseInformation databaseInformation) {
+    public static boolean testConnection(DatabaseInformation databaseInformation) {
         try {
             TypeDatabase typeDatabase = databaseInformation.getTypeDatabase();
             Connection connection = DriverManager.getConnection(
@@ -42,11 +45,11 @@ public class GenerateDatabaseService {
         }
     }
 
-    public void generateDatabase(DatabaseInformation databaseInformation) {
-
+    public static EntityManager generateDatabase(DatabaseInformation databaseInformation, List<Class<?>> classes) {
+        return HibernateUtil.getSessionFactory(databaseInformation, classes).createEntityManager();
     }
 
-    public void exportEntities() {
+    public static void exportEntities() {
 
     }
 }

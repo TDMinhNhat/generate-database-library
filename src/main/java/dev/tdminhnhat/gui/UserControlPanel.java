@@ -118,29 +118,30 @@ class UserControlPanel extends JPanel implements ActionListener {
     }
 
     private void addEvent() {
-        cbChooseTypeDatabase.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JComboBox<TypeDatabase> target = ((JComboBox<TypeDatabase>) e.getSource());
-                txtInputPort.setText(((TypeDatabase) target.getSelectedItem()).getPort().toString());
-            }
+        cbChooseTypeDatabase.addActionListener(e -> {
+            txtInputPort.setText(((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()).getPort().toString());
         });
         cbChooseTypeSource.addActionListener((e) -> {
-            JComboBox<String> target = ((JComboBox<String>) e.getSource());
-            if (Objects.equals(target.getSelectedItem(), "Default")) {
+            if (Objects.equals(cbChooseTypeSource.getSelectedItem().toString(), "Default")) {
                 cbChooseUser.setEnabled(false);
                 DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(
                         TopicService.getListDefaultTopics()
                 );
                 cbChooseTopic.setModel(comboBoxModel);
+                ListEntitiesPanel.addDataToTable(null, cbChooseTopic.getSelectedItem().toString());
             } else {
                 cbChooseUser.setEnabled(true);
                 DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(
                         TopicService.getListTopicsByUser(cbChooseUser.getSelectedItem().toString())
                 );
                 cbChooseTopic.setModel(comboBoxModel);
+                ListEntitiesPanel.addDataToTable(cbChooseUser.getSelectedItem().toString(), cbChooseTopic.getSelectedItem().toString());
             }
             this.repaint();
+        });
+        cbChooseTopic.addActionListener((e) -> {
+            ListEntitiesPanel.addDataToTable(
+                    cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null, cbChooseTopic.getSelectedItem().toString());
         });
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);
@@ -160,7 +161,19 @@ class UserControlPanel extends JPanel implements ActionListener {
                 if (checkInputEmpty()) {
                     toggleActionButton(false);
                     new Thread(() -> {
-
+                        DatabaseInformation databaseInformation = new DatabaseInformation(
+                                txtInputHost.getText(),
+                                Integer.parseInt(txtInputPort.getText()),
+                                txtInputUsername.getText(),
+                                String.valueOf(pwdInputPassword.getPassword()),
+                                txtInputDatabaseName.getText(),
+                                ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
+                                null
+                        );
+                        GenerateDatabaseService.generateDatabase(databaseInformation, TopicService.getListClassNatureTopic(
+                                cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null,
+                                cbChooseTopic.getSelectedItem().toString()
+                        ));
                         toggleActionButton(true);
                     }).start();
                 }
