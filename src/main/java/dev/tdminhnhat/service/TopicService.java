@@ -79,7 +79,7 @@ public class TopicService {
         AnnotatedElement[] listAnnotatedElements = new AnnotatedElement[]{
                 Entity.class, Embeddable.class, MappedSuperclass.class
         };
-        String packageScanning = Objects.isNull(username) ? "dev.tdminhnhat.entity.topics." + topic : "dev.tdminhnhat.users." + username + "." + topic;
+        String packageScanning = Objects.isNull(username) ? "dev.tdminhnhat.entity.topics." + topic : "dev.tdminhnhat.entity.users." + username + "." + topic;
         return new Reflections(packageScanning).get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass()).stream().toList();
     }
 
