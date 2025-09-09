@@ -30,11 +30,9 @@ jobs:
         id: project_version
         run: |
            echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
-           echo ${{ secrets.GPG_PRIVATE_KEY }}
 
       - name: Debug GPG
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
           echo "=== Listing GPG secret keys ==="
           gpg --list-secret-keys --keyid-format LONG || true
           echo "=== Listing GPG public keys ==="
