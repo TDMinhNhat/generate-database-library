@@ -149,6 +149,7 @@
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
                             </gpgArguments>
+                            <keyname>${env.GPG_KEY_ID}</keyname>
                             <passphrase>${env.MAVEN_GPG_PASSPHRASE}</passphrase>
                         </configuration>
                     </plugin>
