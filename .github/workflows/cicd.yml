@@ -33,6 +33,11 @@ jobs:
           echo "=== Listing GPG public keys ==="
           gpg --list-keys --keyid-format LONG || true
 
+      - name: Debug Maven settings
+        run: |
+          echo "=== Effective settings.xml ==="
+          grep -A 2 "<server>" ~/.m2/settings.xml | sed 's/<password>.*<\/password>/<password>***<\/password>/'
+
       - name: Deploy to Maven Central
         run: mvn clean deploy --batch-mode
         env:
