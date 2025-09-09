@@ -22,6 +22,7 @@ public class TopicService {
      * Get all the default topics by this library. Not created from the users.
      *
      * @return {@link String}[] - Return an array of the topics name.
+     * @since v0.0.1-beta
      */
     public static String[] getListDefaultTopics() {
         return new Reflections(PACKAGE_ENTITY_DEFAULT)
@@ -42,6 +43,7 @@ public class TopicService {
      * Get all the users name who have supported for writing their topics and share inside this library.
      *
      * @return {@link String}[] - Return an array of the users name
+     * @since v0.0.1-beta
      */
     public static String[] getListUsers() {
         return new Reflections(PACKAGE_ENTITY_USERS)
@@ -59,6 +61,7 @@ public class TopicService {
      *
      * @param username The name of the user who has provided their topics
      * @return {@link String}[] - Return an array of the topics from the user by username.
+     * @since v0.0.1-beta
      */
     public static String[] getListTopicsByUser(String username) {
         return new Reflections(PACKAGE_USERNAME.replace("{username}", username))
@@ -81,6 +84,7 @@ public class TopicService {
      * @param username The name of the user who has provided their topics. If null, it will get the default topics.
      * @param topic    The name of the topic to get the classes from.
      * @return {@link List} - Return a list of {@link EntityInformation} inside the topic.
+     * @since v0.0.1-beta
      */
     public static List<EntityInformation> getListClassTopic(String username, @NonNull String topic) {
         return getListClassWorkJPATopic(username, topic).parallelStream().map(TopicService::mapClassToEntityInformation).toList();
@@ -92,6 +96,7 @@ public class TopicService {
      * @param username The name of the user who has provided their topics. If null, it will get the default topics.
      * @param topic    The name of the topic to get the classes from.
      * @return {@link List} - Return a list of {@link Class} inside the topic.
+     * @since v0.0.1-beta
      */
     public static List<Class<?>> getListClassWorkJPATopic(String username, String topic) {
         AnnotatedElement[] listAnnotatedElements = new AnnotatedElement[]{

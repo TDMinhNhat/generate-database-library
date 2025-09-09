@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add topics by tdminhnhat">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Assign port default">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/GenerateDatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/GenerateDatabaseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -449,7 +450,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757397843530</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fix get topics from user">
+      <option name="closed" value="true" />
+      <created>1757398550323</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1757398550324</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Assign port default">
+      <option name="closed" value="true" />
+      <created>1757398795443</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1757398795443</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,8 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update maven v2" />
-    <MESSAGE value="Rename package" />
     <MESSAGE value="Remove print out console" />
     <MESSAGE value="Refactor package" />
     <MESSAGE value="Remove export class feature" />
@@ -492,21 +507,8 @@
     <MESSAGE value="Refactor code" />
     <MESSAGE value="Add jackson library" />
     <MESSAGE value="Add topics by tdminhnhat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add topics by tdminhnhat" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java</url>
-          <line>62</line>
-          <properties class="io.github.tdminhnhat.service.TopicService" method="getListTopicsByUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fix get topics from user" />
+    <MESSAGE value="Assign port default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assign port default" />
   </component>
 </project>

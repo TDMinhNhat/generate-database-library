@@ -3,24 +3,24 @@ package io.github.tdminhnhat.service;
 import io.github.tdminhnhat.entity.DatabaseInformation;
 import io.github.tdminhnhat.enums.TypeDatabase;
 import io.github.tdminhnhat.gui.HomeApplicationGUI;
-import io.github.tdminhnhat.util.HibernateUtil;
 import jakarta.persistence.EntityManager;
 
 import javax.swing.*;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
 
+/**
+ * Provide some functionalities to generate database.
+ *
+ * @author Nhat Truong
+ * @since 0.0.1-beta
+ */
 public class GenerateDatabaseService {
 
     /**
      * Show the main GUI of the application.
+     * @since v0.0.1-beta
      */
     public static void showGUI() {
         SwingUtilities.invokeLater(HomeApplicationGUI::new);
@@ -28,9 +28,12 @@ public class GenerateDatabaseService {
 
     /**
      * Testing the connection to database. If successfully, the function will return <b>true</b>
-     * else it's return <b>false</b> if there are some errors when trying to connect.
+     * else it's return <b>false</b> if there are some errors when trying to connect. Make sure you
+     * have to create database first and test this connect later.
      * @param databaseInformation {@link DatabaseInformation}
-     * @return boolean
+     * @return {@link Boolean} check the connection between the app with database server. <b>True</b> -
+     * your app connects to database system successfully else <b>False</b> for failing to connect
+     * @since 0.0.1-beta
      */
     public static boolean testConnection(DatabaseInformation databaseInformation) {
         try {
@@ -51,29 +54,16 @@ public class GenerateDatabaseService {
         }
     }
 
+    /**
+     * For generating tables, columns into your database server. To make sure generating successfully, you might have to
+     * check the connection before you call this function.
+     *
+     * @param databaseInformation the database information for being set up to connect and generate
+     * @param classes list of the classes mapping to table in database system
+     * @return {@link EntityManager}
+     * @since 0.0.1-beta
+     */
     public static EntityManager generateDatabase(DatabaseInformation databaseInformation, List<Class<?>> classes) {
         return HibernateUtil.getSessionFactory(databaseInformation, classes).createEntityManager();
-    }
-
-    public static boolean exportEntities(String path, List<Class<?>> classes) {
-        System.out.println((long) classes.size());
-        for(Class<?> clazz : classes) {
-            String resourceName = clazz.getName().replace(".", "/") + ".class";
-            URL classFileUrl = clazz.getClassLoader().getResource(resourceName);
-
-            if(classFileUrl == null) {
-                throw new RuntimeException("Can't find the locate class");
-            }
-
-            try {
-                InputStream in = classFileUrl.openStream();
-                Path ouputPath = Paths.get(path, clazz.getSimpleName() + ".class");
-                Files.copy(in, ouputPath, StandardCopyOption.REPLACE_EXISTING);
-                in.close();
-            } catch (Exception e) {
-                return false;
-            }
-        }
-        return true;
     }
 }
