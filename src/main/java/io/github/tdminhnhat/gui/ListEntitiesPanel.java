@@ -57,7 +57,6 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("Count Foreign Key").setMaxWidth(125);
         table.getColumn("Count Foreign Key").setResizable(false);
 
-//        table.getColumn("Actions").setCellRenderer(viewRenderColumn);
         table.getColumn("Actions").setMaxWidth(75);
         table.getColumn("Actions").setResizable(false);
     }

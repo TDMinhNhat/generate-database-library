@@ -9,9 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +30,6 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JButton btnClearInput = new JButton("Clear Input");
 
     public UserControlPanel() {
-//        this.setLayout(new BorderLayout());
         Box box = new Box(BoxLayout.Y_AXIS);
 
         Box row1 = new Box(BoxLayout.X_AXIS);
