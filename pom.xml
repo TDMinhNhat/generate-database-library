@@ -6,7 +6,7 @@
 
     <groupId>io.github.tdminhnhat</groupId>
     <artifactId>generate-database</artifactId>
-    <version>0.0.1-beta</version>
+    <version>0.0.2-beta</version>
     <packaging>jar</packaging>
 
     <name>generate-database</name>
