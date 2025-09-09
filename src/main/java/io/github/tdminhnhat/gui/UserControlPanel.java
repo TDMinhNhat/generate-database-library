@@ -31,7 +31,6 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JButton btnGenerate = new JButton("Generate Database");
     private final JButton btnTestConnect = new JButton("Test Connect");
     private final JButton btnClearInput = new JButton("Clear Input");
-    private final JButton btnExportClass = new JButton("Export Class");
 
     public UserControlPanel() {
         this.setLayout(new BorderLayout());
@@ -109,8 +108,6 @@ class UserControlPanel extends JPanel implements ActionListener {
         row5.add(btnTestConnect);
         row5.add(Box.createRigidArea(new Dimension(10, 0)));
         row5.add(btnClearInput);
-        row5.add(Box.createRigidArea(new Dimension(10, 0)));
-        row5.add(btnExportClass);
 
         box.add(row1);
         box.add(row2);
@@ -152,7 +149,6 @@ class UserControlPanel extends JPanel implements ActionListener {
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
-        btnExportClass.addActionListener(this);
     }
 
     private void defaultSetting() {
@@ -223,35 +219,13 @@ class UserControlPanel extends JPanel implements ActionListener {
                 cbChooseTypeDatabase.setSelectedIndex(0);
                 txtInputHost.setFocusable(true);
             }
-            case "Export Class" -> {
-                try {
-                    JFileChooser chooser = new JFileChooser();
-                    chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                    chooser.setDialogTitle("Choose directory to export");
-                    chooser.showOpenDialog(null);
-
-                    String username = cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null;
-                    List<Class<?>> listClasses = TopicService.getListClassNatureTopic(username, cbChooseTopic.getSelectedItem().toString());
-                    if(GenerateDatabaseService.exportEntities(chooser.getSelectedFile().getPath(), listClasses)) {
-                        JOptionPane.showMessageDialog(null, "Export classes successfully. Remember replace old package of the class to new package by yourself", "Export Files", JOptionPane.INFORMATION_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Export failed!", "Export Files", JOptionPane.ERROR_MESSAGE);
-                    }
-
-                } catch (Exception exception) {
-                    log.log(Level.WARNING, exception.getMessage());
-                    JOptionPane.showMessageDialog(null, "Export failed! Read the log in console", "Export Files", JOptionPane.ERROR_MESSAGE);
-                }
-            }
         }
-
     }
 
     private void toggleActionButton(boolean value) {
         btnTestConnect.setEnabled(value);
         btnClearInput.setEnabled(value);
         btnGenerate.setEnabled(value);
-        btnExportClass.setEnabled(value);
     }
 
     private void showMessageError(String message) {

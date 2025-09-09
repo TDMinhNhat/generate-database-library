@@ -93,10 +93,6 @@ public class TopicService {
         return new Reflections(packageScanning).get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass()).stream().toList();
     }
 
-    public static List<Class<?>> getListClassNatureTopic(String username, String topic) {
-        return null;
-    }
-
     private static EntityInformation mapClassToEntityInformation(Class<?> clazzItem) {
         return new EntityInformation(
                 clazzItem.getName().split("\\.")[clazzItem.getName().split("\\.").length - 1],
