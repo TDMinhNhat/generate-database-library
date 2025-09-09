@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - pre-release
-    types: [opened, synchronize, reopened]
 
 jobs:
   publish:
