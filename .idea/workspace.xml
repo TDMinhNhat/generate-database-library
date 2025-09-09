@@ -4,10 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v13">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Refactor code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/AuthenticateProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorCertificate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorEducation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorExperience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Drug.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/PatientAccountBank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Price.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Shift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/TypeDisease.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/enums/Diploma.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/HomeApplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/HomeApplicationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +86,7 @@
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/projects/generate-database-library/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -414,7 +430,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757392778429</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Re-design UI">
+      <option name="closed" value="true" />
+      <created>1757397067119</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397067119</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Refactor code">
+      <option name="closed" value="true" />
+      <created>1757397289723</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397289723</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,9 +464,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add product-basic topic" />
     <MESSAGE value="Fix don't count FK" />
-    <MESSAGE value="Refactor code" />
     <MESSAGE value="Update maven" />
     <MESSAGE value="Update maven v2" />
     <MESSAGE value="Rename package" />
@@ -457,6 +487,8 @@
     <MESSAGE value="Update cicd v11" />
     <MESSAGE value="Update cicd v12" />
     <MESSAGE value="Update cicd v13" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v13" />
+    <MESSAGE value="Re-design UI" />
+    <MESSAGE value="Refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
   </component>
 </project>
