@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add production">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v6">
       <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "pre-release",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -340,7 +339,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757389267953</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update cicd v5">
+      <option name="closed" value="true" />
+      <created>1757389997316</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1757389997316</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update cicd v6">
+      <option name="closed" value="true" />
+      <created>1757390170601</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1757390170601</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,8 +373,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init project" />
-    <MESSAGE value="Add basic entity" />
     <MESSAGE value="Add notice after testConnection" />
     <MESSAGE value="Add choose type, topic and user" />
     <MESSAGE value="Get topics and users" />
@@ -383,6 +396,8 @@
     <MESSAGE value="Clean cicd" />
     <MESSAGE value="Update cicd" />
     <MESSAGE value="Add production" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add production" />
+    <MESSAGE value="Update cicd v5" />
+    <MESSAGE value="Update cicd v6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v6" />
   </component>
 </project>
