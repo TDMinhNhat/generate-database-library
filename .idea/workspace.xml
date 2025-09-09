@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v8" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v9">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -369,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757390918860</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Update cicd v9">
+      <option name="closed" value="true" />
+      <created>1757391228038</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1757391228038</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +397,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Get topics and users" />
     <MESSAGE value="Resize width the header column" />
     <MESSAGE value="Done generate database" />
     <MESSAGE value="Fix package for users" />
@@ -412,6 +421,7 @@
     <MESSAGE value="Update cicd v6" />
     <MESSAGE value="Update cicd v7" />
     <MESSAGE value="Update cicd v8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v8" />
+    <MESSAGE value="Update cicd v9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v9" />
   </component>
 </project>
