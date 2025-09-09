@@ -7,6 +7,12 @@ import io.github.tdminhnhat.util.HibernateUtil;
 import jakarta.persistence.EntityManager;
 
 import javax.swing.*;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.List;
@@ -49,7 +55,25 @@ public class GenerateDatabaseService {
         return HibernateUtil.getSessionFactory(databaseInformation, classes).createEntityManager();
     }
 
-    public static void exportEntities() {
+    public static boolean exportEntities(String path, List<Class<?>> classes) {
+        System.out.println((long) classes.size());
+        for(Class<?> clazz : classes) {
+            String resourceName = clazz.getName().replace(".", "/") + ".class";
+            URL classFileUrl = clazz.getClassLoader().getResource(resourceName);
 
+            if(classFileUrl == null) {
+                throw new RuntimeException("Can't find the locate class");
+            }
+
+            try {
+                InputStream in = classFileUrl.openStream();
+                Path ouputPath = Paths.get(path, clazz.getSimpleName() + ".class");
+                Files.copy(in, ouputPath, StandardCopyOption.REPLACE_EXISTING);
+                in.close();
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        return true;
     }
 }

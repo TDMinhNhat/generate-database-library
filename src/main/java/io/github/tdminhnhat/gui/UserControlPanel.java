@@ -9,6 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -174,7 +177,7 @@ class UserControlPanel extends JPanel implements ActionListener {
                                     ((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()),
                                     null
                             );
-                            GenerateDatabaseService.generateDatabase(databaseInformation, TopicService.getListClassNatureTopic(
+                            GenerateDatabaseService.generateDatabase(databaseInformation, TopicService.getListClassWorkJPATopic(
                                     cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null,
                                     cbChooseTopic.getSelectedItem().toString()
                             ));
@@ -221,7 +224,24 @@ class UserControlPanel extends JPanel implements ActionListener {
                 txtInputHost.setFocusable(true);
             }
             case "Export Class" -> {
+                try {
+                    JFileChooser chooser = new JFileChooser();
+                    chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                    chooser.setDialogTitle("Choose directory to export");
+                    chooser.showOpenDialog(null);
 
+                    String username = cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null;
+                    List<Class<?>> listClasses = TopicService.getListClassNatureTopic(username, cbChooseTopic.getSelectedItem().toString());
+                    if(GenerateDatabaseService.exportEntities(chooser.getSelectedFile().getPath(), listClasses)) {
+                        JOptionPane.showMessageDialog(null, "Export classes successfully. Remember replace old package of the class to new package by yourself", "Export Files", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Export failed!", "Export Files", JOptionPane.ERROR_MESSAGE);
+                    }
+
+                } catch (Exception exception) {
+                    log.log(Level.WARNING, exception.getMessage());
+                    JOptionPane.showMessageDialog(null, "Export failed! Read the log in console", "Export Files", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
 
