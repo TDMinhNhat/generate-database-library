@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Refactor code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/AuthenticateProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorCertificate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorEducation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/DoctorExperience.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Drug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/PatientAccountBank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Price.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/Shift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/TypeDisease.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/entity/users/tdminhnhat/enums/Diploma.java" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add topics by tdminhnhat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +85,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dev.tdminhnhat.entity.topics.product_basic" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\generate-database-library\src\main\java\io\github\tdminhnhat\entity\users\tdminhnhat" />
     </key>
   </component>
   <component name="RunManager">
@@ -446,7 +433,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757397289723</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Add jackson library">
+      <option name="closed" value="true" />
+      <created>1757397706519</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397706519</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add topics by tdminhnhat">
+      <option name="closed" value="true" />
+      <created>1757397843530</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397843530</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix don't count FK" />
-    <MESSAGE value="Update maven" />
     <MESSAGE value="Update maven v2" />
     <MESSAGE value="Rename package" />
     <MESSAGE value="Remove print out console" />
@@ -489,6 +490,23 @@
     <MESSAGE value="Update cicd v13" />
     <MESSAGE value="Re-design UI" />
     <MESSAGE value="Refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
+    <MESSAGE value="Add jackson library" />
+    <MESSAGE value="Add topics by tdminhnhat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add topics by tdminhnhat" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/TopicService.java</url>
+          <line>62</line>
+          <properties class="io.github.tdminhnhat.service.TopicService" method="getListTopicsByUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -61,7 +61,7 @@ public class TopicService {
      * @return {@link String}[] - Return an array of the topics from the user by username.
      */
     public static String[] getListTopicsByUser(String username) {
-        return new Reflections(PACKAGE_ENTITY_USERS)
+        return new Reflections(PACKAGE_USERNAME.replace("{username}", username))
                 .get(Scanners.TypesAnnotated.with(Entity.class).asClass())
                 .stream()
                 .map(Class::getPackageName)
