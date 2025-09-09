@@ -21,7 +21,7 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JComboBox<String> cbChooseUser = new JComboBox<>(TopicService.getListUsers());
     private final JComboBox<String> cbChooseTopic = new JComboBox<>(TopicService.getListDefaultTopics());
     private final JTextField txtInputHost = new JTextField("localhost");
-    private final JSpinner spInputPort = new JSpinner();
+    private final JSpinner spInputPort = new JSpinner(new SpinnerNumberModel(1433, 0, 65536, 1));
     private final JTextField txtInputDatabaseName = new JTextField("");
     private final JTextField txtInputUsername = new JTextField("sa");
     private final JPasswordField pwdInputPassword = new JPasswordField("123456789");
