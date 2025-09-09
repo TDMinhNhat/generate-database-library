@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Remove useless class">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Clean cicd">
       <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -25,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +67,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pre-release&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -126,7 +126,8 @@
       <workItem from="1757158763310" duration="6323000" />
       <workItem from="1757214462678" duration="3385000" />
       <workItem from="1757306264216" duration="13570000" />
-      <workItem from="1757383658060" duration="2714000" />
+      <workItem from="1757383658060" duration="3138000" />
+      <workItem from="1757386898664" duration="1848000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -296,7 +297,31 @@
       <option name="project" value="LOCAL" />
       <updated>1757385575657</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Update pom.xml and cicd">
+      <option name="closed" value="true" />
+      <created>1757386436389</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757386436389</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update cicd">
+      <option name="closed" value="true" />
+      <created>1757386639990</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1757386639990</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Clean cicd">
+      <option name="closed" value="true" />
+      <created>1757387854676</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1757387854676</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +360,9 @@
     <MESSAGE value="Update version" />
     <MESSAGE value="Fix subpackage in topic" />
     <MESSAGE value="Remove useless class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove useless class" />
+    <MESSAGE value="Update pom.xml and cicd" />
+    <MESSAGE value="Update cicd" />
+    <MESSAGE value="Clean cicd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean cicd" />
   </component>
 </project>
