@@ -39,7 +39,9 @@ jobs:
           gpg --list-keys --keyid-format LONG || true
 
       - name: Deploy to Maven Central
-        run: mvn clean deploy -P release --batch-mode
+        run: mvn clean deploy --batch-mode
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
       - name: Configure Git
         run: |
