@@ -24,7 +24,7 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JComboBox<String> cbChooseUser = new JComboBox<>(TopicService.getListUsers());
     private final JComboBox<String> cbChooseTopic = new JComboBox<>(TopicService.getListDefaultTopics());
     private final JTextField txtInputHost = new JTextField("localhost");
-    private final JTextField txtInputPort = new JTextField("1433");
+    private final JSpinner spInputPort = new JSpinner();
     private final JTextField txtInputDatabaseName = new JTextField("");
     private final JTextField txtInputUsername = new JTextField("sa");
     private final JPasswordField pwdInputPassword = new JPasswordField("123456789");
@@ -33,96 +33,105 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JButton btnClearInput = new JButton("Clear Input");
 
     public UserControlPanel() {
-        this.setLayout(new BorderLayout());
+//        this.setLayout(new BorderLayout());
         Box box = new Box(BoxLayout.Y_AXIS);
 
-        // Row 1: Title of Panel
-        JPanel row1 = new JPanel();
-        row1.setLayout(new BoxLayout(row1, BoxLayout.X_AXIS));
-        JLabel title = new JLabel("Input Database Connection Information", JLabel.CENTER);
-        title.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
-        row1.add(title);
-
-        // Row 2: Input host, port and choose type database
-        JPanel row2 = new JPanel();
-        row2.setLayout(new BoxLayout(row2, BoxLayout.X_AXIS));
-        JLabel lbInputHost = new JLabel("Host:");
-        lbInputHost.setFont(new Font("", Font.PLAIN, 15));
-        lbInputHost.setPreferredSize(new Dimension(50, 30));
-        row2.add(lbInputHost);
-        row2.add(txtInputHost);
-        JLabel lbInputPort = new JLabel("Port:");
-        lbInputPort.setFont(new Font("", Font.PLAIN, 15));
-        lbInputPort.setPreferredSize(new Dimension(50, 30));
-        row2.add(lbInputPort);
-        row2.add(txtInputPort);
-        JLabel lbChooseTypeDatabase = new JLabel("Type Database:");
-        lbChooseTypeDatabase.setFont(new Font("", Font.PLAIN, 15));
-        lbChooseTypeDatabase.setPreferredSize(new Dimension(150, 30));
-        row2.add(lbChooseTypeDatabase);
-        row2.add(cbChooseTypeDatabase);
-
-        // Row 3: Input database name, username and password
-        JPanel row3 = new JPanel();
-        row3.setLayout(new BoxLayout(row3, BoxLayout.X_AXIS));
-        JLabel lbInputDatabaseName = new JLabel("Database Name:");
-        lbInputDatabaseName.setFont(new Font("", Font.PLAIN, 15));
-        lbInputDatabaseName.setPreferredSize(new Dimension(150, 30));
-        row3.add(lbInputDatabaseName);
-        row3.add(txtInputDatabaseName);
-        JLabel lbInputUsername = new JLabel("Username:");
-        lbInputUsername.setFont(new Font("", Font.PLAIN, 15));
-        lbInputUsername.setPreferredSize(new Dimension(100, 30));
-        row3.add(lbInputUsername);
-        row3.add(txtInputUsername);
-        JLabel lbInputPassword = new JLabel("Password:");
-        lbInputPassword.setFont(new Font("", Font.PLAIN, 15));
-        lbInputPassword.setPreferredSize(new Dimension(100, 30));
-        row3.add(lbInputPassword);
-        row3.add(pwdInputPassword);
-
-        // Row 4: Choose the topics to generate database
-        JPanel row4 = new JPanel();
-        row4.setLayout(new BoxLayout(row4, BoxLayout.X_AXIS));
-        JLabel lbChooseTypeSource = new JLabel("Type Source:");
-        lbChooseTypeSource.setFont(new Font("", Font.PLAIN, 15));
-        lbChooseTypeSource.setPreferredSize(new Dimension(150, 30));
-        row4.add(lbChooseTypeSource);
-        row4.add(cbChooseTypeSource);
-        JLabel lbChooseUser = new JLabel("User:");
-        lbChooseUser.setFont(new Font("", Font.PLAIN, 15));
-        lbChooseUser.setPreferredSize(new Dimension(100, 30));
-        row4.add(lbChooseUser);
-        row4.add(cbChooseUser);
-        JLabel lbChooseTopic = new JLabel("Topic:");
-        lbChooseTopic.setFont(new Font("", Font.PLAIN, 15));
-        lbChooseTopic.setPreferredSize(new Dimension(100, 30));
-        row4.add(lbChooseTopic);
-        row4.add(cbChooseTopic);
-
-        // Row 5: Button Generate, Test Connect, Clear Input and Export Class
-        JPanel row5 = new JPanel();
-        row5.setLayout(new BoxLayout(row5, BoxLayout.X_AXIS));
-        row5.add(btnGenerate);
-        row5.add(Box.createRigidArea(new Dimension(10, 0)));
-        row5.add(btnTestConnect);
-        row5.add(Box.createRigidArea(new Dimension(10, 0)));
-        row5.add(btnClearInput);
-
+        Box row1 = new Box(BoxLayout.X_AXIS);
+        JLabel lbHost = new JLabel("Host:");
+        lbHost.setPreferredSize(new Dimension(125, 30));
+        txtInputHost.setPreferredSize(new Dimension(150, 30));
+        row1.add(lbHost);
+        row1.add(txtInputHost);
         box.add(row1);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row2 = new Box(BoxLayout.X_AXIS);
+        JLabel lbPort = new JLabel("Port:");
+        lbPort.setPreferredSize(new Dimension(125, 30));
+        spInputPort.setPreferredSize(new Dimension(150, 30));
+        row2.add(lbPort);
+        row2.add(spInputPort);
         box.add(row2);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row3 = new Box(BoxLayout.X_AXIS);
+        JLabel lbDatabaseName = new JLabel("Database Name:");
+        lbDatabaseName.setPreferredSize(new Dimension(125, 30));
+        txtInputDatabaseName.setPreferredSize(new Dimension(150, 30));
+        row3.add(lbDatabaseName);
+        row3.add(txtInputDatabaseName);
         box.add(row3);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row4 = new Box(BoxLayout.X_AXIS);
+        JLabel lbUsername = new JLabel("Username:");
+        lbUsername.setPreferredSize(new Dimension(125, 30));
+        txtInputUsername.setPreferredSize(new Dimension(150, 30));
+        row4.add(lbUsername);
+        row4.add(txtInputUsername);
         box.add(row4);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row5 = new Box(BoxLayout.X_AXIS);
+        JLabel lbPassword = new JLabel("Password:");
+        lbPassword.setPreferredSize(new Dimension(125, 30));
+        pwdInputPassword.setPreferredSize(new Dimension(150, 30));
+        row5.add(lbPassword);
+        row5.add(pwdInputPassword);
         box.add(row5);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row6 = new Box(BoxLayout.X_AXIS);
+        JLabel lbTypeDatabase = new JLabel("Type Database:");
+        lbTypeDatabase.setPreferredSize(new Dimension(125, 30));
+        cbChooseTypeDatabase.setPreferredSize(new Dimension(150, 30));
+        row6.add(lbTypeDatabase);
+        row6.add(cbChooseTypeDatabase);
+        box.add(row6);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row7 = new Box(BoxLayout.X_AXIS);
+        JLabel lbTypeSource = new JLabel("Type Source:");
+        lbTypeSource.setPreferredSize(new Dimension(125, 30));
+        cbChooseTypeSource.setPreferredSize(new Dimension(150, 30));
+        row7.add(lbTypeSource);
+        row7.add(cbChooseTypeSource);
+        box.add(row7);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row8 = new Box(BoxLayout.X_AXIS);
+        JLabel lbUsers = new JLabel("Choose User:");
+        lbUsers.setPreferredSize(new Dimension(125, 30));
+        cbChooseUser.setPreferredSize(new Dimension(150, 30));
+        row8.add(lbUsers);
+        row8.add(cbChooseUser);
+        box.add(row8);
+        box.add(Box.createVerticalStrut(10));
+
+        Box row9 = new Box(BoxLayout.X_AXIS);
+        JLabel lbTopics = new JLabel("Choose Topic:");
+        lbTopics.setPreferredSize(new Dimension(125, 30));
+        cbChooseTopic.setPreferredSize(new Dimension(150, 30));
+        row9.add(lbTopics);
+        row9.add(cbChooseTopic);
+        box.add(row9);
+        box.add(Box.createVerticalStrut(10));
+
+        JPanel pnListActions = new JPanel();
+        pnListActions.setLayout(new FlowLayout(FlowLayout.CENTER));
+        pnListActions.add(btnGenerate);
+        pnListActions.add(btnTestConnect);
+        pnListActions.add(btnClearInput);
+        box.add(pnListActions);
 
         addEvent();
         defaultSetting();
-        this.add(box, BorderLayout.CENTER);
+        this.add(box);
     }
 
     private void addEvent() {
         cbChooseTypeDatabase.addActionListener(e -> {
-            txtInputPort.setText(((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()).getPort().toString());
+            spInputPort.setValue(((TypeDatabase) cbChooseTypeDatabase.getSelectedItem()).getPort());
         });
         cbChooseTypeSource.addActionListener((e) -> {
             if (Objects.equals(cbChooseTypeSource.getSelectedItem().toString(), "Default")) {
@@ -166,7 +175,7 @@ class UserControlPanel extends JPanel implements ActionListener {
                         try {
                             DatabaseInformation databaseInformation = new DatabaseInformation(
                                     txtInputHost.getText(),
-                                    Integer.parseInt(txtInputPort.getText()),
+                                    Integer.parseInt(spInputPort.getValue().toString()),
                                     txtInputUsername.getText(),
                                     String.valueOf(pwdInputPassword.getPassword()),
                                     txtInputDatabaseName.getText(),
@@ -193,7 +202,7 @@ class UserControlPanel extends JPanel implements ActionListener {
                     new Thread(() -> {
                         DatabaseInformation databaseInformation = new DatabaseInformation(
                                 txtInputHost.getText(),
-                                Integer.parseInt(txtInputPort.getText()),
+                                Integer.parseInt(spInputPort.getValue().toString()),
                                 txtInputUsername.getText(),
                                 String.valueOf(pwdInputPassword.getPassword()),
                                 txtInputDatabaseName.getText(),
@@ -212,7 +221,7 @@ class UserControlPanel extends JPanel implements ActionListener {
             }
             case "Clear Input" -> {
                 txtInputHost.setText("localhost");
-                txtInputPort.setText("1433");
+                spInputPort.setValue(1433);
                 txtInputDatabaseName.setText("");
                 txtInputUsername.setText("sa");
                 pwdInputPassword.setText("123456789");
@@ -236,7 +245,7 @@ class UserControlPanel extends JPanel implements ActionListener {
         if (txtInputHost.getText().isEmpty()) {
             showMessageError("Please enter a valid Host");
             return false;
-        } else if (txtInputPort.getText().isEmpty()) {
+        } else if (Objects.isNull(spInputPort.getValue())) {
             showMessageError("Please enter a valid Port");
             return false;
         } else if (txtInputUsername.getText().isEmpty()) {

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add production">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v13">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/HomeApplicationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/HomeApplicationGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -339,7 +342,79 @@
       <option name="project" value="LOCAL" />
       <updated>1757389267953</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update cicd v5">
+      <option name="closed" value="true" />
+      <created>1757389997316</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1757389997316</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update cicd v6">
+      <option name="closed" value="true" />
+      <created>1757390170601</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1757390170601</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update cicd v7">
+      <option name="closed" value="true" />
+      <created>1757390696737</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1757390696737</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update cicd v8">
+      <option name="closed" value="true" />
+      <created>1757390918860</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1757390918860</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update cicd v9">
+      <option name="closed" value="true" />
+      <created>1757391228038</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1757391228038</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update cicd v10">
+      <option name="closed" value="true" />
+      <created>1757391430682</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1757391430682</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update cicd v11">
+      <option name="closed" value="true" />
+      <created>1757391789455</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1757391789455</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update cicd v12">
+      <option name="closed" value="true" />
+      <created>1757392327999</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1757392327999</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update cicd v13">
+      <option name="closed" value="true" />
+      <created>1757392778428</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1757392778429</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,15 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init project" />
-    <MESSAGE value="Add basic entity" />
-    <MESSAGE value="Add notice after testConnection" />
-    <MESSAGE value="Add choose type, topic and user" />
-    <MESSAGE value="Get topics and users" />
-    <MESSAGE value="Resize width the header column" />
-    <MESSAGE value="Done generate database" />
-    <MESSAGE value="Fix package for users" />
-    <MESSAGE value="Add notice" />
     <MESSAGE value="Add product-basic topic" />
     <MESSAGE value="Fix don't count FK" />
     <MESSAGE value="Refactor code" />
@@ -382,6 +448,15 @@
     <MESSAGE value="Clean cicd" />
     <MESSAGE value="Update cicd" />
     <MESSAGE value="Add production" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add production" />
+    <MESSAGE value="Update cicd v5" />
+    <MESSAGE value="Update cicd v6" />
+    <MESSAGE value="Update cicd v7" />
+    <MESSAGE value="Update cicd v8" />
+    <MESSAGE value="Update cicd v9" />
+    <MESSAGE value="Update cicd v10" />
+    <MESSAGE value="Update cicd v11" />
+    <MESSAGE value="Update cicd v12" />
+    <MESSAGE value="Update cicd v13" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v13" />
   </component>
 </project>
