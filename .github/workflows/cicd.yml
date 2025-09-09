@@ -62,6 +62,19 @@ jobs:
 
       - name: Merge pre-release -> main
         run: |
+          git config user.name "TDMinhNhat [Auto]"
+          git config user.email "tdminhnhat13092003@gmail.com"
+      
+          # Fetch all branches
+          git fetch origin
+      
+          # Checkout pre-release and rebase onto main
+          git checkout pre-release
+          git rebase origin/main
+      
+          # Switch to main and merge pre-release
           git checkout main
-          git merge --no-ff origin/pre-release -m "Auto-merge pre-release into main" --allow-unrelated-histories
+          git merge --ff-only pre-release
+      
+          # Push changes
           git push origin main
