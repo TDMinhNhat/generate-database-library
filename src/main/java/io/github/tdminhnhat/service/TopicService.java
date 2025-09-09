@@ -2,19 +2,14 @@ package io.github.tdminhnhat.service;
 
 import io.github.tdminhnhat.entity.EntityInformation;
 import jakarta.persistence.*;
-import javassist.tools.reflect.Reflection;
 import lombok.NonNull;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
-import org.reflections.scanners.SubTypesScanner;
-import org.reflections.util.ConfigurationBuilder;
 
 import java.lang.reflect.*;
-import java.sql.Ref;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class TopicService {
 
@@ -25,6 +20,7 @@ public class TopicService {
 
     /**
      * Get all the default topics by this library. Not created from the users.
+     *
      * @return {@link String}[] - Return an array of the topics name.
      */
     public static String[] getListDefaultTopics() {
@@ -32,7 +28,11 @@ public class TopicService {
                 .get(Scanners.TypesAnnotated.with(Entity.class).asClass())
                 .stream()
                 .map(Class::getPackageName)
-                .map(packageName -> packageName.replace(PACKAGE_ENTITY_DEFAULT + ".", ""))
+                .map(packageName -> {
+                    String topic = packageName.replace(PACKAGE_ENTITY_DEFAULT + ".", "");
+                    String[] splitPackage = topic.split("\\.");
+                    return splitPackage.length > 0 ? splitPackage[0] : topic;
+                })
                 .distinct()
                 .toList()
                 .toArray(new String[]{});
@@ -40,6 +40,7 @@ public class TopicService {
 
     /**
      * Get all the users name who have supported for writing their topics and share inside this library.
+     *
      * @return {@link String}[] - Return an array of the users name
      */
     public static String[] getListUsers() {
@@ -55,6 +56,7 @@ public class TopicService {
 
     /**
      * Get all the topics by username
+     *
      * @param username The name of the user who has provided their topics
      * @return {@link String}[] - Return an array of the topics from the user by username.
      */
@@ -63,7 +65,11 @@ public class TopicService {
                 .get(Scanners.TypesAnnotated.with(Entity.class).asClass())
                 .stream()
                 .map(Class::getPackageName)
-                .map(packageName -> packageName.replace(PACKAGE_USERNAME.replace("{username}", username) + ".", ""))
+                .map(packageName -> {
+                    String topic = packageName.replace(PACKAGE_USERNAME.replace("{username}", username) + ".", "");
+                    String[] splitPackage = topic.split("\\.");
+                    return splitPackage.length > 0 ? splitPackage[0] : topic;
+                })
                 .distinct()
                 .toList()
                 .toArray(new String[]{});
@@ -71,8 +77,9 @@ public class TopicService {
 
     /**
      * Get all the classes inside the topic.
+     *
      * @param username The name of the user who has provided their topics. If null, it will get the default topics.
-     * @param topic The name of the topic to get the classes from.
+     * @param topic    The name of the topic to get the classes from.
      * @return {@link List} - Return a list of {@link EntityInformation} inside the topic.
      */
     public static List<EntityInformation> getListClassTopic(String username, @NonNull String topic) {
@@ -81,8 +88,9 @@ public class TopicService {
 
     /**
      * Get all the classes nature inside the topic
+     *
      * @param username The name of the user who has provided their topics. If null, it will get the default topics.
-     * @param topic The name of the topic to get the classes from.
+     * @param topic    The name of the topic to get the classes from.
      * @return {@link List} - Return a list of {@link Class} inside the topic.
      */
     public static List<Class<?>> getListClassWorkJPATopic(String username, String topic) {
