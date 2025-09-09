@@ -39,8 +39,10 @@ jobs:
           grep -A 2 "<server>" ~/.m2/settings.xml | sed 's/<password>.*<\/password>/<password>***<\/password>/'
 
       - name: Deploy to Maven Central
-        run: mvn clean deploy --batch-mode
+        run: mvn clean deploy -P release --batch-mode
         env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
       - name: Configure Git

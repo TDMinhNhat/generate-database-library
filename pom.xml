@@ -33,18 +33,6 @@
         <url>https://github.com/TDMinhNhat/generate-database-library</url>
     </scm>
 
-    <!-- Required by Sonatype: where to publish -->
-    <distributionManagement>
-        <snapshotRepository>
-            <id>central</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>central</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -61,6 +49,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernate.orm</groupId>
@@ -71,7 +60,6 @@
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>13.2.0.jre11</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -100,6 +88,7 @@
             <id>release</id>
             <build>
                 <plugins>
+                    <!-- Central Portal publishing -->
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -118,7 +107,9 @@
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
-                                <goals><goal>jar</goal></goals>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -131,7 +122,9 @@
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
-                                <goals><goal>jar</goal></goals>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -145,7 +138,9 @@
                             <execution>
                                 <id>sign-artifacts</id>
                                 <phase>verify</phase>
-                                <goals><goal>sign</goal></goals>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
                             </execution>
                         </executions>
                         <configuration>
@@ -154,7 +149,6 @@
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
                             </gpgArguments>
-                            <!--suppress UnresolvedMavenProperty -->
                             <passphrase>${env.MAVEN_GPG_PASSPHRASE}</passphrase>
                         </configuration>
                     </plugin>
