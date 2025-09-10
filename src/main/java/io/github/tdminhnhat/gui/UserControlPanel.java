@@ -151,6 +151,13 @@ class UserControlPanel extends JPanel implements ActionListener {
             ListEntitiesPanel.addDataToTable(
                     cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null, cbChooseTopic.getSelectedItem().toString());
         });
+        cbChooseUser.addActionListener((e) -> {
+            DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(
+                    TopicService.getListTopicsByUser(cbChooseUser.getSelectedItem().toString())
+            );
+            cbChooseTopic.setModel(comboBoxModel);
+            ListEntitiesPanel.addDataToTable(cbChooseUser.getSelectedItem().toString(), cbChooseTopic.getSelectedItem().toString());
+        });
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
