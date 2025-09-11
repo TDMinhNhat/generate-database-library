@@ -11,7 +11,7 @@ import java.util.List;
 
 class ListEntitiesPanel extends JPanel {
 
-    private static final String[] columnNames = {"ID", "Entity Name", "Supper Entity", "Package Name", "Count Field", "Is Entity", "Count Foreign Key", "Actions"};
+    private static final String[] columnNames = {"ID", "Entity Name", "Supper Entity", "Package Name", "Count Field", "Is Entity", "Count Foreign Key"};
     private static final DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0) {
         @Override
         public boolean isCellEditable(int row, int column) {
@@ -56,9 +56,6 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("Count Foreign Key").setMinWidth(125);
         table.getColumn("Count Foreign Key").setMaxWidth(125);
         table.getColumn("Count Foreign Key").setResizable(false);
-
-        table.getColumn("Actions").setMaxWidth(75);
-        table.getColumn("Actions").setResizable(false);
     }
 
     public static void addDataToTable(String username, String topic) {

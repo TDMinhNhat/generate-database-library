@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Add export classes feature">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update document function">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/GenerateDatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/service/GenerateDatabaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ListEntitiesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ListEntitiesPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +139,7 @@
       <workItem from="1757383658060" duration="3138000" />
       <workItem from="1757386898664" duration="1848000" />
       <workItem from="1757473700933" duration="7665000" />
-      <workItem from="1757566821338" duration="2638000" />
+      <workItem from="1757566821338" duration="2990000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <option name="closed" value="true" />
@@ -493,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757569979512</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Update document function">
+      <option name="closed" value="true" />
+      <created>1757570343986</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1757570343986</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update version" />
     <MESSAGE value="Fix subpackage in topic" />
     <MESSAGE value="Remove useless class" />
     <MESSAGE value="Update pom.xml and cicd" />
@@ -536,6 +543,7 @@
     <MESSAGE value="Refactor docs and build document" />
     <MESSAGE value="Add choose user event" />
     <MESSAGE value="Add export classes feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add export classes feature" />
+    <MESSAGE value="Update document function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update document function" />
   </component>
 </project>
