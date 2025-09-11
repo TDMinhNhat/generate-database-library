@@ -24,7 +24,6 @@ public class GenerateDatabaseService {
 
     /**
      * Show the main GUI of the application.
-     * @since v0.0.1-beta
      */
     public static void showGUI() {
         SwingUtilities.invokeLater(HomeApplicationGUI::new);
@@ -37,7 +36,6 @@ public class GenerateDatabaseService {
      * @param databaseInformation {@link DatabaseInformation}
      * @return {@link Boolean} check the connection between the app with database server. <b>True</b> -
      * your app connects to database system successfully else <b>False</b> for failing to connect
-     * @since 0.0.1-beta
      */
     public static boolean testConnection(DatabaseInformation databaseInformation) {
         try {
@@ -65,17 +63,18 @@ public class GenerateDatabaseService {
      * @param databaseInformation the database information for being set up to connect and generate
      * @param classes list of the classes mapping to table in database system
      * @return {@link EntityManager}
-     * @since 0.0.1-beta
      */
     public static EntityManager generateDatabase(DatabaseInformation databaseInformation, List<Class<?>> classes) {
         return HibernateUtil.getSessionFactory(databaseInformation, classes).createEntityManager();
     }
 
     /**
+     * Export classes into your directory folder. Can use all those classes in your personal projects. Remember change your package name, path each classes after export
+     * successfully
      *
-     * @param pathSave
-     * @param packageScanning
-     * @return
+     * @param pathSave the directory folder which all the classes will be exported in there.
+     * @param packageScanning point the directory package to scan, can be scanned and exported the classes inside the sub-package.
+     * @return {@link String} the message of the export class functionality, if the message is <b>null</b>, it has exported the classes successfully and else you will get a message error for failing export.
      */
     public static String exportClass(String pathSave, String packageScanning) {
         try (ScanResult scanResult = new ClassGraph()
