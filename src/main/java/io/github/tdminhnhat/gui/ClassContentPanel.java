@@ -15,6 +15,7 @@ public class ClassContentPanel extends JPanel {
         textArea.setOpaque(false);
         textArea.setBackground(Color.white);
         textArea.setCaretPosition(0);
+        textArea.setText("");
         add(scrollPane, BorderLayout.CENTER);
     }
 
