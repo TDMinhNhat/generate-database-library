@@ -2,15 +2,17 @@ package io.github.tdminhnhat.gui;
 
 import io.github.tdminhnhat.entity.EntityInformation;
 import io.github.tdminhnhat.service.TopicService;
-import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.util.List;
 
-class ListEntitiesPanel extends JPanel {
+public class ShowDetailClassGUI extends JFrame {
 
     private static final String[] columnNames = {"ID", "Entity Name", "Supper Entity", "Package Name", "Count Field", "Is Entity", "Count Foreign Key"};
     private static final DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0) {
@@ -19,15 +21,70 @@ class ListEntitiesPanel extends JPanel {
             return false;
         }
     };
-    @Getter
-    private static final JTable table = new JTable(tableModel);
-    public ListEntitiesPanel() {
+
+    private final JTable table = new JTable(tableModel);
+    private final JScrollPane spTable = new JScrollPane(table);
+    private JPanel pnClassContentPanel = new ClassContentPanel();
+
+    public ShowDetailClassGUI(String username, String topic) throws HeadlessException {
+        this.setTitle("View Detail Classes");
         this.setLayout(new BorderLayout());
+        this.setResizable(false);
+        this.setAlwaysOnTop(true);
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setSize(1400, 800);
+        spTable.setPreferredSize(new Dimension(800, 800));
+        this.add(spTable, BorderLayout.WEST);
+        this.add(pnClassContentPanel, BorderLayout.CENTER);
+        this.setVisible(true);
 
+        addDataToTable(username, topic);
         defaultSetting();
+        table.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String getPackage = table.getValueAt(
+                        table.getSelectedRow(),
+                        3
+                ).toString();
 
-        JScrollPane scrollPane = new JScrollPane(table);
-        this.add(scrollPane, BorderLayout.CENTER);
+                String getClassName = table.getValueAt(
+                        table.getSelectedRow(),
+                        1
+                ).toString();
+                table.setEnabled(false);
+                new Thread(() -> {
+                    try {
+                        ClassContentPanel.setContentClass(TopicService.getContentClass(getPackage, getClassName));
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Show Detail Class", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        table.setEnabled(true);
+                    }
+                }).start();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
     }
 
     private void defaultSetting() {
@@ -60,7 +117,8 @@ class ListEntitiesPanel extends JPanel {
         table.getColumn("Count Foreign Key").setResizable(false);
     }
 
-    public static void addDataToTable(String username, String topic) {
+
+    private void addDataToTable(String username, String topic) {
         removeAllRows();
 
         List<EntityInformation> data = TopicService.getListClassTopic(username, topic);
@@ -77,7 +135,7 @@ class ListEntitiesPanel extends JPanel {
         table.repaint();
     }
 
-    private static void removeAllRows() {
+    private void removeAllRows() {
         if(table.getRowCount() > 0) {
             tableModel.removeRow(0);
             removeAllRows();

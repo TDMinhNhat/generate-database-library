@@ -1,9 +1,7 @@
 package io.github.tdminhnhat.entity.users.example.department;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Entity @Table(name = "departments")
 @Data
