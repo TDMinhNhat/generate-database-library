@@ -258,7 +258,7 @@ class UserControlPanel extends JPanel implements ActionListener {
                 }).start();
             }
             case "View Detail" -> {
-                new ShowDetailClassGUI();
+                new ShowDetailClassGUI(cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null, cbChooseTopic.getSelectedItem().toString());
             }
         }
     }
