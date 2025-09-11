@@ -166,6 +166,14 @@
                                             <shadedPattern>io.github.tdminhnhat.shaded.org.benf</shadedPattern>
                                         </relocation>
                                     </relocations>
+                                    <filters>
+                                        <filter>
+                                            <artifact>net.bytebuddy:byte-buddy</artifact>
+                                            <excludes>
+                                                <exclude>META-INF/versions/**</exclude>
+                                            </excludes>
+                                        </filter>
+                                    </filters>
                                 </configuration>
                             </execution>
                         </executions>
