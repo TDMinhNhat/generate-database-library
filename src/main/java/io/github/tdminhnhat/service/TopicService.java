@@ -119,6 +119,13 @@ public class TopicService {
        return Objects.isNull(username) ? PACKAGE_ENTITY_DEFAULT + "." + topic : PACKAGE_USERNAME_TOPIC.replace("{username}", username).replace("{topic}", topic);
     }
 
+    /**
+     * Get the content of the class. Name class, fields,...
+     * @param packageName the path of directory name package contain the class need to read the content
+     * @param className the name class to read
+     * @return {@link String} the content of the class, remember it can cause issue the performance if the content too long
+     * @throws IOException the function throw this if the I/O cause errors
+     */
     public static String getContentClass(String packageName, String className) throws IOException {
         try(ScanResult scanResult = new ClassGraph().enableClassInfo().acceptPackages(packageName).scan()) {
             ClassInfo classInfo = scanResult.getAllClasses().filter(item -> item.getSimpleName().equals(className)).stream().findFirst().orElseThrow(() -> new ClassNameNotFoundException("Can't find the class to scan content"));

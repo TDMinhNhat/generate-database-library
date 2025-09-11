@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Refactor code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Clear content">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ClassContentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ClassContentPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ShowDetailClassGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/ShowDetailClassGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/tdminhnhat/gui/UserControlPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,15 +138,7 @@
       <workItem from="1757383658060" duration="3138000" />
       <workItem from="1757386898664" duration="1848000" />
       <workItem from="1757473700933" duration="7665000" />
-      <workItem from="1757566821338" duration="7163000" />
-    </task>
-    <task id="LOCAL-00001" summary="Init project">
-      <option name="closed" value="true" />
-      <created>1757119787590</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757119787590</updated>
+      <workItem from="1757566821338" duration="7497000" />
     </task>
     <task id="LOCAL-00002" summary="Add basic entity">
       <option name="closed" value="true" />
@@ -528,7 +516,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757573407507</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Fix table">
+      <option name="closed" value="true" />
+      <created>1757575024911</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1757575024911</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Clear content">
+      <option name="closed" value="true" />
+      <created>1757575212123</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1757575212123</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,8 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update pom.xml and cicd" />
-    <MESSAGE value="Clean cicd" />
     <MESSAGE value="Update cicd" />
     <MESSAGE value="Add production" />
     <MESSAGE value="Update cicd v5" />
@@ -571,6 +573,8 @@
     <MESSAGE value="Remove &quot;Action&quot; column" />
     <MESSAGE value="Add view detail class feature" />
     <MESSAGE value="Refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
+    <MESSAGE value="Fix table" />
+    <MESSAGE value="Clear content" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clear content" />
   </component>
 </project>
