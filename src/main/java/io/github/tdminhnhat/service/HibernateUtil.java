@@ -1,4 +1,4 @@
-package io.github.tdminhnhat.util;
+package io.github.tdminhnhat.service;
 
 import io.github.tdminhnhat.entity.DatabaseInformation;
 import org.hibernate.SessionFactory;
@@ -10,9 +10,9 @@ import org.hibernate.service.ServiceRegistry;
 import java.util.List;
 import java.util.Properties;
 
-public class HibernateUtil {
+class HibernateUtil {
 
-    public static SessionFactory getSessionFactory(DatabaseInformation databaseInformation, List<Class<?>> classes) {
+    static SessionFactory getSessionFactory(DatabaseInformation databaseInformation, List<Class<?>> classes) {
         Configuration configuration = new Configuration();
 
         // Configuration JPA Hibernate properties

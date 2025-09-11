@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update cicd v10">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update pom.xml">
       <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -70,6 +71,7 @@
     "git-widget-placeholder": "pre-release",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/projects/generate-database-library/libs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,6 +86,11 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dev.tdminhnhat.entity.topics.product_basic" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\generate-database-library\libs" />
+      <recent name="D:\projects\generate-database-library\src\main\java\io\github\tdminhnhat\entity\users\example\product" />
+      <recent name="D:\projects\generate-database-library\src\main\java\io\github\tdminhnhat\entity\users\tdminhnhat" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,6 +109,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -131,22 +139,8 @@
       <workItem from="1757306264216" duration="13570000" />
       <workItem from="1757383658060" duration="3138000" />
       <workItem from="1757386898664" duration="1848000" />
-    </task>
-    <task id="LOCAL-00001" summary="Init project">
-      <option name="closed" value="true" />
-      <created>1757119787590</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1757119787590</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add basic entity">
-      <option name="closed" value="true" />
-      <created>1757160436573</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1757160436573</updated>
+      <workItem from="1757473700933" duration="7665000" />
+      <workItem from="1757566821338" duration="7497000" />
     </task>
     <task id="LOCAL-00003" summary="Add notice after testConnection">
       <option name="closed" value="true" />
@@ -388,7 +382,159 @@
       <option name="project" value="LOCAL" />
       <updated>1757391430682</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update cicd v11">
+      <option name="closed" value="true" />
+      <created>1757391789455</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1757391789455</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update cicd v12">
+      <option name="closed" value="true" />
+      <created>1757392327999</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1757392327999</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update cicd v13">
+      <option name="closed" value="true" />
+      <created>1757392778428</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1757392778429</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Re-design UI">
+      <option name="closed" value="true" />
+      <created>1757397067119</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397067119</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Refactor code">
+      <option name="closed" value="true" />
+      <created>1757397289723</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397289723</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add jackson library">
+      <option name="closed" value="true" />
+      <created>1757397706519</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397706519</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add topics by tdminhnhat">
+      <option name="closed" value="true" />
+      <created>1757397843530</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1757397843530</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Fix get topics from user">
+      <option name="closed" value="true" />
+      <created>1757398550323</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1757398550324</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Assign port default">
+      <option name="closed" value="true" />
+      <created>1757398795443</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1757398795443</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Refactor docs and build document">
+      <option name="closed" value="true" />
+      <created>1757399876210</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1757399876210</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add choose user event">
+      <option name="closed" value="true" />
+      <created>1757474025623</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1757474025623</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add export classes feature">
+      <option name="closed" value="true" />
+      <created>1757569979512</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1757569979512</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Update document function">
+      <option name="closed" value="true" />
+      <created>1757570343986</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1757570343986</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Remove &quot;Action&quot; column">
+      <option name="closed" value="true" />
+      <created>1757570726684</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1757570726684</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Add view detail class feature">
+      <option name="closed" value="true" />
+      <created>1757573288017</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1757573288017</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Refactor code">
+      <option name="closed" value="true" />
+      <created>1757573407507</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1757573407507</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Fix table">
+      <option name="closed" value="true" />
+      <created>1757575024911</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1757575024911</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Clear content">
+      <option name="closed" value="true" />
+      <created>1757575212123</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1757575212123</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Update pom.xml">
+      <option name="closed" value="true" />
+      <created>1757576016788</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1757576016789</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,24 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Done generate database" />
-    <MESSAGE value="Fix package for users" />
-    <MESSAGE value="Add notice" />
-    <MESSAGE value="Add product-basic topic" />
-    <MESSAGE value="Fix don't count FK" />
-    <MESSAGE value="Refactor code" />
-    <MESSAGE value="Update maven" />
-    <MESSAGE value="Update maven v2" />
-    <MESSAGE value="Rename package" />
-    <MESSAGE value="Remove print out console" />
-    <MESSAGE value="Refactor package" />
-    <MESSAGE value="Remove export class feature" />
-    <MESSAGE value="Update version" />
-    <MESSAGE value="Fix subpackage in topic" />
-    <MESSAGE value="Remove useless class" />
-    <MESSAGE value="Update pom.xml and cicd" />
-    <MESSAGE value="Clean cicd" />
-    <MESSAGE value="Update cicd" />
     <MESSAGE value="Add production" />
     <MESSAGE value="Update cicd v5" />
     <MESSAGE value="Update cicd v6" />
@@ -431,6 +559,24 @@
     <MESSAGE value="Update cicd v8" />
     <MESSAGE value="Update cicd v9" />
     <MESSAGE value="Update cicd v10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update cicd v10" />
+    <MESSAGE value="Update cicd v11" />
+    <MESSAGE value="Update cicd v12" />
+    <MESSAGE value="Update cicd v13" />
+    <MESSAGE value="Re-design UI" />
+    <MESSAGE value="Add jackson library" />
+    <MESSAGE value="Add topics by tdminhnhat" />
+    <MESSAGE value="Fix get topics from user" />
+    <MESSAGE value="Assign port default" />
+    <MESSAGE value="Refactor docs and build document" />
+    <MESSAGE value="Add choose user event" />
+    <MESSAGE value="Add export classes feature" />
+    <MESSAGE value="Update document function" />
+    <MESSAGE value="Remove &quot;Action&quot; column" />
+    <MESSAGE value="Add view detail class feature" />
+    <MESSAGE value="Refactor code" />
+    <MESSAGE value="Fix table" />
+    <MESSAGE value="Clear content" />
+    <MESSAGE value="Update pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update pom.xml" />
   </component>
 </project>

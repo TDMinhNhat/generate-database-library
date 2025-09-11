@@ -26,6 +26,15 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
+      - name: Install CFR locally
+        run: |
+          mvn install:install-file \
+            -Dfile=libs/cfr-0.152.jar \
+            -DgroupId=cfr \
+            -DartifactId=cfr \
+            -Dversion=0.152 \
+            -Dpackaging=jar
+
       - name: Debug GPG
         run: |
           echo "=== Listing GPG secret keys ==="
@@ -62,6 +71,19 @@ jobs:
 
       - name: Merge pre-release -> main
         run: |
+          git config user.name "TDMinhNhat [Auto]"
+          git config user.email "tdminhnhat13092003@gmail.com"
+      
+          # Fetch all branches
+          git fetch origin
+      
+          # Checkout pre-release and rebase onto main
+          git checkout pre-release
+          git rebase origin/main
+      
+          # Switch to main and merge pre-release
           git checkout main
-          git merge --no-ff origin/pre-release -m "Auto-merge pre-release into main"
+          git merge --ff-only pre-release
+      
+          # Push changes
           git push origin main
