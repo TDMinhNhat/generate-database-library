@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Merge branch 'develop' into pre-release&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml">
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Update pom.xml">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cicd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -140,14 +141,6 @@
       <workItem from="1757386898664" duration="1848000" />
       <workItem from="1757473700933" duration="7665000" />
       <workItem from="1757566821338" duration="7497000" />
-    </task>
-    <task id="LOCAL-00002" summary="Add basic entity">
-      <option name="closed" value="true" />
-      <created>1757160436573</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1757160436573</updated>
     </task>
     <task id="LOCAL-00003" summary="Add notice after testConnection">
       <option name="closed" value="true" />
@@ -533,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757575212123</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Update pom.xml">
+      <option name="closed" value="true" />
+      <created>1757576016788</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1757576016789</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update cicd" />
     <MESSAGE value="Add production" />
     <MESSAGE value="Update cicd v5" />
     <MESSAGE value="Update cicd v6" />
@@ -576,6 +576,7 @@
     <MESSAGE value="Refactor code" />
     <MESSAGE value="Fix table" />
     <MESSAGE value="Clear content" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clear content" />
+    <MESSAGE value="Update pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update pom.xml" />
   </component>
 </project>

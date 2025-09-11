@@ -81,8 +81,7 @@
             <groupId>cfr</groupId>
             <artifactId>cfr</artifactId>
             <version>0.152</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/cfr-0.152.jar</systemPath>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -166,12 +165,19 @@
                                             <shadedPattern>io.github.tdminhnhat.shaded.org.benf</shadedPattern>
                                         </relocation>
                                     </relocations>
+                                    <minimizeJar>false</minimizeJar>
                                     <filters>
                                         <filter>
                                             <artifact>net.bytebuddy:byte-buddy</artifact>
                                             <excludes>
                                                 <exclude>META-INF/versions/**</exclude>
                                             </excludes>
+                                        </filter>
+                                        <filter>
+                                            <artifact>cfr:cfr</artifact>
+                                            <includes>
+                                                <include>**/*</include>
+                                            </includes>
                                         </filter>
                                     </filters>
                                 </configuration>
