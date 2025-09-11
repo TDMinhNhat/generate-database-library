@@ -71,8 +71,7 @@ class ListEntitiesPanel extends JPanel {
                 entityInformation.getPackageName(),
                 String.valueOf(entityInformation.getNumberOfFields()),
                 entityInformation.getIsEntity().toString(),
-                String.valueOf(entityInformation.getCountFK()),
-                "View"
+                String.valueOf(entityInformation.getCountFK())
         }).forEach(tableModel::addRow);
 
         table.repaint();

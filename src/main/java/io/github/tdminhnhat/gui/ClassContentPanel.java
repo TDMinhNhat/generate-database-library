@@ -35,11 +35,14 @@ public class ClassContentPanel extends JPanel {
                         table.getSelectedRow(),
                         1
                 ).toString();
+                table.setEnabled(false);
                 new Thread(() -> {
                     try {
                         textArea.setText(TopicService.getContentClass(getPackage, getClassName));
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(null, ex.getMessage(), "Show Detail Class", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        table.setEnabled(true);
                     }
                 }).start();
             }
