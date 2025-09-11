@@ -1,14 +1,18 @@
 package io.github.tdminhnhat.service;
 
+import io.github.classgraph.*;
 import io.github.tdminhnhat.entity.DatabaseInformation;
 import io.github.tdminhnhat.enums.TypeDatabase;
 import io.github.tdminhnhat.gui.HomeApplicationGUI;
 import jakarta.persistence.EntityManager;
+import org.benf.cfr.reader.api.CfrDriver;
+import org.benf.cfr.reader.api.OutputSinkFactory;
 
 import javax.swing.*;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.List;
+import java.util.*;
 
 /**
  * Provide some functionalities to generate database.
@@ -65,5 +69,140 @@ public class GenerateDatabaseService {
      */
     public static EntityManager generateDatabase(DatabaseInformation databaseInformation, List<Class<?>> classes) {
         return HibernateUtil.getSessionFactory(databaseInformation, classes).createEntityManager();
+    }
+
+    /**
+     *
+     * @param pathSave
+     * @param packageScanning
+     * @return
+     */
+    public static String exportClass(String pathSave, String packageScanning) {
+        try (ScanResult scanResult = new ClassGraph()
+                .enableClassInfo()
+                .acceptPackages(packageScanning)
+                .scan()) {
+
+            for (ClassInfo classInfo : scanResult.getAllClasses()) {
+                Resource resource = classInfo.getResource();
+                if (resource == null) continue;
+
+                // Export superclass if exists
+                if (classInfo.getSuperclass() != null) {
+                    exportSubClass(pathSave, classInfo.getSuperclass());
+                }
+
+                // Export this class
+                extracted(pathSave, classInfo, resource);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return e.getMessage();
+        }
+
+        return null; // success
+    }
+
+    private static void exportSubClass(String pathSave, ClassInfo getSuperClass) throws Exception {
+        Resource resource = getSuperClass.getResource();
+        if (resource == null) return;
+
+        extracted(pathSave, getSuperClass, resource);
+    }
+
+    private static void extracted(String pathSave, ClassInfo classInfo, Resource resource) throws IOException {
+        // 1. Save class bytes temporarily
+        String className = classInfo.getSimpleName();
+        File tempClassFile = File.createTempFile(className, ".class");
+        try (
+                InputStream is = resource.open();
+                OutputStream os = new FileOutputStream(tempClassFile)
+        ) {
+            is.transferTo(os);
+        }
+
+        // 2. Decompile with CFR
+        StringBuilder javaOutput = new StringBuilder();
+        OutputSinkFactory sinkFactory = getOutputSinkFactory(javaOutput);
+
+        Map<String, String> options = new HashMap<>() {{
+            put("comments", "false");
+            put("silent", "true");
+        }};
+
+        CfrDriver driver = new CfrDriver.Builder()
+                .withOutputSink(sinkFactory)
+                .withOptions(options)
+                .build();
+
+        driver.analyse(Collections.singletonList(tempClassFile.getAbsolutePath()));
+        tempClassFile.delete();
+
+        // 3. Clean and save the .java file
+        String cleanedJava = cleanJavaOutput(javaOutput.toString());
+        File outputJavaFile = new File(pathSave, className + ".java");
+        outputJavaFile.getParentFile().mkdirs();
+
+        try (FileWriter writer = new FileWriter(outputJavaFile)) {
+            writer.write(cleanedJava);
+        }
+    }
+
+    private static OutputSinkFactory getOutputSinkFactory(StringBuilder javaOutput) {
+        return new OutputSinkFactory() {
+            @Override
+            public List<SinkClass> getSupportedSinks(SinkType sinkType, Collection<SinkClass> collection) {
+                if (sinkType == SinkType.JAVA) {
+                    return List.of(SinkClass.STRING);
+                }
+                return Collections.emptyList(); // ignore errors, progress, etc.
+            }
+
+            @Override
+            public <T> Sink<T> getSink(SinkType sinkType, SinkClass sinkClass) {
+                return (T t) -> {
+                    if (sinkType == SinkType.JAVA && sinkClass == SinkClass.STRING) {
+                        javaOutput.append(t.toString()).append(System.lineSeparator());
+                    }
+                    // Ignore others (like SinkType.PROGRESS, SinkType.ERROR)
+                };
+            }
+        };
+    }
+
+    private static String cleanJavaOutput(String code) {
+        StringBuilder cleaned = new StringBuilder();
+        String[] lines = code.split("\n");
+
+        boolean inBlockComment = false;
+
+        for (String line : lines) {
+            String trimmed = line.trim();
+
+            // Remove package declaration
+            if (trimmed.startsWith("package ")) continue;
+
+            // Skip block comments
+            if (trimmed.startsWith("/*")) {
+                inBlockComment = true;
+                continue;
+            }
+            if (trimmed.endsWith("*/")) {
+                inBlockComment = false;
+                continue;
+            }
+            if (inBlockComment) continue;
+
+            // Skip single-line comments
+            if (trimmed.startsWith("//")) continue;
+
+            // Skip any leftover CFR version/comment lines
+            if (trimmed.contains("Decompiled with CFR")) continue;
+
+            cleaned.append(line).append(System.lineSeparator());
+        }
+
+        return cleaned.toString();
     }
 }

@@ -28,6 +28,7 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JButton btnGenerate = new JButton("Generate Database");
     private final JButton btnTestConnect = new JButton("Test Connect");
     private final JButton btnClearInput = new JButton("Clear Input");
+    private final JButton btnExportClass = new JButton("Export Class");
 
     public UserControlPanel() {
         Box box = new Box(BoxLayout.Y_AXIS);
@@ -118,6 +119,7 @@ class UserControlPanel extends JPanel implements ActionListener {
         pnListActions.add(btnGenerate);
         pnListActions.add(btnTestConnect);
         pnListActions.add(btnClearInput);
+        pnListActions.add(btnExportClass);
         box.add(pnListActions);
 
         addEvent();
@@ -161,6 +163,7 @@ class UserControlPanel extends JPanel implements ActionListener {
         btnGenerate.addActionListener(this);
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
+        btnExportClass.addActionListener(this);
     }
 
     private void defaultSetting() {
@@ -230,6 +233,26 @@ class UserControlPanel extends JPanel implements ActionListener {
                 pwdInputPassword.setText("123456789");
                 cbChooseTypeDatabase.setSelectedIndex(0);
                 txtInputHost.setFocusable(true);
+            }
+            case "Export Class" -> {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileChooser.showOpenDialog(null);
+                String getPath = fileChooser.getSelectedFile().getPath();
+                new Thread(() -> {
+                    btnExportClass.setEnabled(false);
+                    String result = GenerateDatabaseService.exportClass(getPath,
+                            TopicService.getPackageNameSelectTopic(
+                                    cbChooseUser.isEnabled() ? cbChooseUser.getSelectedItem().toString() : null,
+                                    cbChooseTopic.getSelectedItem().toString()
+                            ));
+                    if(!Objects.isNull(result)) {
+                        JOptionPane.showMessageDialog(null, result, "Export Classes", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Export classes successfully. Please check the folder. Remember changing your package name before use.", "Export Classes", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    btnExportClass.setEnabled(true);
+                }).start();
             }
         }
     }

@@ -106,6 +106,10 @@ public class TopicService {
         return new Reflections(packageScanning).get(Scanners.TypesAnnotated.with(listAnnotatedElements).asClass()).stream().toList();
     }
 
+    public static String getPackageNameSelectTopic(String username, String topic) {
+       return Objects.isNull(username) ? PACKAGE_ENTITY_DEFAULT + "." + topic : PACKAGE_USERNAME_TOPIC.replace("{username}", username).replace("{topic}", topic);
+    }
+
     private static EntityInformation mapClassToEntityInformation(Class<?> clazzItem) {
         return new EntityInformation(
                 clazzItem.getName().split("\\.")[clazzItem.getName().split("\\.").length - 1],
