@@ -29,6 +29,7 @@ class UserControlPanel extends JPanel implements ActionListener {
     private final JButton btnTestConnect = new JButton("Test Connect");
     private final JButton btnClearInput = new JButton("Clear Input");
     private final JButton btnExportClass = new JButton("Export Class");
+    private final JButton btnViewDetail = new JButton("View Detail");
 
     public UserControlPanel() {
         Box box = new Box(BoxLayout.Y_AXIS);
@@ -120,6 +121,7 @@ class UserControlPanel extends JPanel implements ActionListener {
         pnListActions.add(btnTestConnect);
         pnListActions.add(btnClearInput);
         pnListActions.add(btnExportClass);
+        pnListActions.add(btnViewDetail);
         box.add(pnListActions);
 
         addEvent();
@@ -164,6 +166,7 @@ class UserControlPanel extends JPanel implements ActionListener {
         btnTestConnect.addActionListener(this);
         btnClearInput.addActionListener(this);
         btnExportClass.addActionListener(this);
+        btnViewDetail.addActionListener(this);
     }
 
     private void defaultSetting() {
@@ -253,6 +256,9 @@ class UserControlPanel extends JPanel implements ActionListener {
                     }
                     btnExportClass.setEnabled(true);
                 }).start();
+            }
+            case "View Detail" -> {
+                new ShowDetailClassGUI();
             }
         }
     }

@@ -2,6 +2,7 @@ package io.github.tdminhnhat.gui;
 
 import io.github.tdminhnhat.entity.EntityInformation;
 import io.github.tdminhnhat.service.TopicService;
+import lombok.Getter;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -18,6 +19,7 @@ class ListEntitiesPanel extends JPanel {
             return false;
         }
     };
+    @Getter
     private static final JTable table = new JTable(tableModel);
     public ListEntitiesPanel() {
         this.setLayout(new BorderLayout());
