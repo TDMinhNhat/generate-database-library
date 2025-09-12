@@ -81,8 +81,7 @@
             <groupId>cfr</groupId>
             <artifactId>cfr</artifactId>
             <version>0.152</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/cfr-0.152.jar</systemPath>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
