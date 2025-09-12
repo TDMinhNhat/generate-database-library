@@ -1,13 +1,21 @@
 package io.github.tdminhnhat.enums;
 
+import lombok.Getter;
+
+/**
+ * Which's database that the user want to interact
+ * @author Nhat Truong
+ * @version 1.1.0
+ * @since 0.0.1-beta
+ */
+@Getter
 public enum TypeDatabase {
 
     SQL_SERVER("jdbc:sqlserver://{HOST}:{PORT};databaseName={DATABASE_NAME}", "com.microsoft.sqlserver.jdbc.SQLServerDriver", "localhost", 1433),
     MARIADB("jdbc:mariadb://{HOST}:{PORT}/{DATABASE_NAME}", "org.mariadb.jdbc.Driver", "localhost", 3306),
     MYSQL("jdbc:mysql://{HOST}:{PORT}/{DATABASE_NAME}", "com.mysql.cj.jdbc.Driver", "localhost", 3306),
     POSTGRESQL("jdbc:postgresql://{HOST}:{PORT}/{DATABASE_NAME}", "org.postgresql.Driver", "localhost", 5432),
-    ORACLE("jdbc:oracle:thin:@{HOST}:{PORT}:{DATABASE_NAME}", "oracle.jdbc.OracleDriver", "localhost", 1521)
-    ;
+    ORACLE("jdbc:oracle:thin:@{HOST}:{PORT}:{DATABASE_NAME}", "oracle.jdbc.OracleDriver", "localhost", 1521);
 
     private final String url;
     private final String driver;
@@ -19,21 +27,5 @@ public enum TypeDatabase {
         this.driver = driver;
         this.host = host;
         this.port = port;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getDriver() {
-        return driver;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public Integer getPort() {
-        return port;
     }
 }
