@@ -61,29 +61,12 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
-      - name: Configure Git
+      - name: Replace main with pre-release
         run: |
           git config user.name "TDMinhNhat [Auto]"
           git config user.email "tdminhnhat13092003@gmail.com"
-
-      - name: Fetch all branches
-        run: git fetch origin
-
-      - name: Merge pre-release -> main
-        run: |
-          git config user.name "TDMinhNhat [Auto]"
-          git config user.email "tdminhnhat13092003@gmail.com"
-      
-          # Fetch all branches
-          git fetch origin
-      
-          # Checkout pre-release and rebase onto main
-          git checkout pre-release
-          git rebase origin/main
-      
-          # Switch to main and merge pre-release
+          
+          git fetch --all
           git checkout main
-          git merge --ff-only pre-release
-      
-          # Push changes
-          git push origin main
+          git reset --hard origin/pre-release
+          git push origin main --force
