@@ -15,12 +15,15 @@ public class DrugStock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NonNull
     private Integer quantity;
 
+    @NonNull
     private String location; // e.g., "Main Pharmacy", "Warehouse"
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "drug_id", nullable = false,
             foreignKey = @ForeignKey(name = "fk_stock_drug"))
+    @NonNull
     private Drug drug;
 }

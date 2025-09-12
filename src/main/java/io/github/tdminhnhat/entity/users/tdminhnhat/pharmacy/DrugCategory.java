@@ -18,10 +18,16 @@ public class DrugCategory {
     private Long id;
 
     @Column(nullable = false, unique = true, length = 100)
+    @NonNull
     private String name;
 
     private String description;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Drug> drugs;
+
+    public DrugCategory(@NonNull String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

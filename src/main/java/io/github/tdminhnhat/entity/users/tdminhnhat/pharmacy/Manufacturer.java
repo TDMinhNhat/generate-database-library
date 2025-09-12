@@ -18,6 +18,7 @@ public class Manufacturer {
     private Long id;
 
     @Column(nullable = false, unique = true, length = 150)
+    @NonNull
     private String name;
 
     private String address;
@@ -26,4 +27,10 @@ public class Manufacturer {
 
     @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL)
     private List<Drug> drugs;
+
+    public Manufacturer(@NonNull String name, String address, String contactNumber) {
+        this.name = name;
+        this.address = address;
+        this.contactNumber = contactNumber;
+    }
 }
