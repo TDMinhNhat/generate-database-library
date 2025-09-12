@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Refactor ci">
-      <change afterPath="$PROJECT_DIR$/DEVELOP_RULE.md" afterDir="false" />
+    <list default="true" id="8e234aa5-8972-4124-80fd-7620cffb0bf4" name="Changes" comment="Create document README.md">
+      <change afterPath="$PROJECT_DIR$/DEVELOPMENT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/how_get_username.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -92,6 +93,10 @@
       <recent name="D:\projects\generate-database-library\src\main\java\io\github\tdminhnhat\entity\users\example\product" />
       <recent name="D:\projects\generate-database-library\src\main\java\io\github\tdminhnhat\entity\users\tdminhnhat" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\generate-database-library\images" />
+      <recent name="D:\projects\generate-database-library\how_get_username" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -141,15 +146,7 @@
       <workItem from="1757386898664" duration="1848000" />
       <workItem from="1757473700933" duration="7665000" />
       <workItem from="1757566821338" duration="7497000" />
-      <workItem from="1757645385396" duration="6019000" />
-    </task>
-    <task id="LOCAL-00005" summary="Get topics and users">
-      <option name="closed" value="true" />
-      <created>1757233661087</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1757233661087</updated>
+      <workItem from="1757645385396" duration="12077000" />
     </task>
     <task id="LOCAL-00006" summary="Resize width the header column">
       <option name="closed" value="true" />
@@ -535,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757577025122</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Create document README.md">
+      <option name="closed" value="true" />
+      <created>1757651628232</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1757651628233</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update cicd v6" />
     <MESSAGE value="Update cicd v7" />
     <MESSAGE value="Update cicd v8" />
     <MESSAGE value="Update cicd v9" />
@@ -578,6 +582,7 @@
     <MESSAGE value="Update pom.xml" />
     <MESSAGE value="Update setup library" />
     <MESSAGE value="Refactor ci" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor ci" />
+    <MESSAGE value="Create document README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create document README.md" />
   </component>
 </project>

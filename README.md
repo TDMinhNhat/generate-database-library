@@ -121,4 +121,4 @@ String message = GenerateDatabaseSerivce.exportClass(pathSave, packageScanning);
 📖 **API Documentation**: [View Javadoc](https://javadoc.io/doc/io.github.tdminhnhat/generate-database)
 
 # 💻 Develop library
-Want to become a contribution in this project. Read carefully in this [document](DEVELOP_RULE.md).
+Want to become a contribution in this project. Read carefully in this [document](DEVELOPMENT.md).
